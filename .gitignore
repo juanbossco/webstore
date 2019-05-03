@@ -4,7 +4,7 @@ codebase/DataContext/bin/
 codebase/DataContext/obj/
 codebase/Gateways/webgateway/bin/
 codebase/Gateways/webgateway/obj/
-codebase/Models/bin/
-codebase/Models/obj/
+codebase/Models/webstore/bin/
+codebase/Models/webstore/obj/
 codebase/Test/webservices/bin/
 codebase/Test/webservices/obj/
