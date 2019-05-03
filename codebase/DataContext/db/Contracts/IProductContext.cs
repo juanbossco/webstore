@@ -1,7 +1,7 @@
 using System.Collections.Generic;
 using Webstore.Models;
 
-namespace Webstore.DataContext
+namespace Webstore.DataContext.Contracts
 {
     public interface IProductContext
     {

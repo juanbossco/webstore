@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
+using Webstore.DataContext.Contracts;
 using Webstore.DataContext;
 
 namespace Webservice.Product.Controllers

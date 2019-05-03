@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using Webstore.Models;
+using Webstore.DataContext.Contracts;
 
 namespace Webstore.DataContext
 {

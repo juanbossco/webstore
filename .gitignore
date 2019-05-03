@@ -8,3 +8,7 @@ codebase/Models/webstore/bin/
 codebase/Models/webstore/obj/
 codebase/Test/webservices/bin/
 codebase/Test/webservices/obj/
+codebase/Test/DataContext/bin/
+codebase/Test/DataContext/obj/
+codebase/Test/Models/bin/
+codebase/Test/Models/obj/
