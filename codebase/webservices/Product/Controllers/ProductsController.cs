@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using Webstore.DataContext.Contracts;
 using Webstore.DataContext;
 
-namespace Webservice.Product.Controllers
+namespace Webservice.ProductApi
 {
     [Route("api/[controller]")]
     [ApiController]

@@ -10,10 +10,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Webstore.Webgateway.Clients.Contracts;
-using Webstore.Webgateway.Clients;
+using Webstore.DataContext.Contracts;
+using Webstore.DataContext;
 
-namespace webgateway
+namespace Webservice.CartApi
 {
     public class Startup
     {
@@ -28,8 +28,7 @@ namespace webgateway
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-            services.AddSingleton<ICartClient,CartClient>();
-            services.AddSingleton<IOrderClient,OrderClient>();
+            services.AddSingleton<ICartContext,CartContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

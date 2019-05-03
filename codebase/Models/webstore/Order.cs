@@ -6,10 +6,10 @@ namespace Webstore.Models
 {
     public class Order
     {
-        public Order(Customer customer, IEnumerable<Product> products)
+        public Order(Customer customer, Cart cart)
         {
             this.Customer = customer;
-            this.Products = products;
+            this.Cart = cart;
             this.OrderNumber = (new Guid()).ToString();
             this.PlacedDate = DateTime.UtcNow;
         }
@@ -17,7 +17,7 @@ namespace Webstore.Models
         public long OrderId { get; set; }
         public string OrderNumber { get; set; }
         public Customer Customer { get; set; }
-        public IEnumerable<Product> Products { get; set; }
+        public Cart Cart {get;set;}
         public DateTime PlacedDate { get; set; }
 
     }

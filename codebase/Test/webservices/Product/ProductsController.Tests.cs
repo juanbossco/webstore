@@ -21,7 +21,7 @@ namespace Product.Tests
         public ProductsControllerTests()
         {
             _server = new TestServer(new WebHostBuilder()
-                .UseStartup<Webservice.Product.Startup>());
+                .UseStartup<Webservice.ProductApi.Startup>());
             _client = _server.CreateClient();
 
         }
