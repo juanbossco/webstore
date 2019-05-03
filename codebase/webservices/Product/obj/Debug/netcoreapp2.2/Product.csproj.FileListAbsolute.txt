@@ -1,0 +1,14 @@
+/Users/juanlopez/Projects/webstore/codebase/webservices/Product/bin/Debug/netcoreapp2.2/Product.deps.json
+/Users/juanlopez/Projects/webstore/codebase/webservices/Product/bin/Debug/netcoreapp2.2/Product.runtimeconfig.json
+/Users/juanlopez/Projects/webstore/codebase/webservices/Product/bin/Debug/netcoreapp2.2/Product.runtimeconfig.dev.json
+/Users/juanlopez/Projects/webstore/codebase/webservices/Product/bin/Debug/netcoreapp2.2/Product.dll
+/Users/juanlopez/Projects/webstore/codebase/webservices/Product/bin/Debug/netcoreapp2.2/Product.pdb
+/Users/juanlopez/Projects/webstore/codebase/webservices/Product/obj/Debug/netcoreapp2.2/Product.csprojAssemblyReference.cache
+/Users/juanlopez/Projects/webstore/codebase/webservices/Product/obj/Debug/netcoreapp2.2/Product.csproj.CoreCompileInputs.cache
+/Users/juanlopez/Projects/webstore/codebase/webservices/Product/obj/Debug/netcoreapp2.2/Product.RazorAssemblyInfo.cache
+/Users/juanlopez/Projects/webstore/codebase/webservices/Product/obj/Debug/netcoreapp2.2/Product.RazorAssemblyInfo.cs
+/Users/juanlopez/Projects/webstore/codebase/webservices/Product/obj/Debug/netcoreapp2.2/Product.AssemblyInfoInputs.cache
+/Users/juanlopez/Projects/webstore/codebase/webservices/Product/obj/Debug/netcoreapp2.2/Product.AssemblyInfo.cs
+/Users/juanlopez/Projects/webstore/codebase/webservices/Product/obj/Debug/netcoreapp2.2/Product.RazorTargetAssemblyInfo.cache
+/Users/juanlopez/Projects/webstore/codebase/webservices/Product/obj/Debug/netcoreapp2.2/Product.dll
+/Users/juanlopez/Projects/webstore/codebase/webservices/Product/obj/Debug/netcoreapp2.2/Product.pdb
