@@ -9937,18 +9937,18 @@
     },
     "DataContext/1.0.0": {
       "type": "project",
-      "path": "../../../DataContext/DataContext.csproj",
-      "msbuildProject": "../../../DataContext/DataContext.csproj"
+      "path": "../../DataContext/DataContext.csproj",
+      "msbuildProject": "../../DataContext/DataContext.csproj"
     },
     "Product/1.0.0": {
       "type": "project",
-      "path": "../../../Webservices/Product/Product.csproj",
-      "msbuildProject": "../../../Webservices/Product/Product.csproj"
+      "path": "../../Webservices/Product/Product.csproj",
+      "msbuildProject": "../../Webservices/Product/Product.csproj"
     },
     "webstore/1.0.0": {
       "type": "project",
-      "path": "../../../Models/webstore/webstore.csproj",
-      "msbuildProject": "../../../Models/webstore/webstore.csproj"
+      "path": "../../Models/webstore/webstore.csproj",
+      "msbuildProject": "../../Models/webstore/webstore.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -9976,11 +9976,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/juanlopez/Projects/webstore/codebase/Test/webservices/Product.Tests/Product.Tests.csproj",
-      "projectName": "Product.Tests",
-      "projectPath": "/Users/juanlopez/Projects/webstore/codebase/Test/webservices/Product.Tests/Product.Tests.csproj",
+      "projectUniqueName": "/Users/juanlopez/Projects/webstore/codebase/Test/webservices/Webservices.Tests.csproj",
+      "projectName": "Webservices.Tests",
+      "projectPath": "/Users/juanlopez/Projects/webstore/codebase/Test/webservices/Webservices.Tests.csproj",
       "packagesPath": "/Users/juanlopez/.nuget/packages/",
-      "outputPath": "/Users/juanlopez/Projects/webstore/codebase/Test/webservices/Product.Tests/obj/",
+      "outputPath": "/Users/juanlopez/Projects/webstore/codebase/Test/webservices/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"

@@ -19,9 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\webservices\Product\Product.csproj" />
-    <ProjectReference Include="..\..\..\models\webstore\webstore.csproj" />
-    <ProjectReference Include="..\..\..\DataContext\DataContext.csproj" />
+    <ProjectReference Include="..\..\webservices\Product\Product.csproj" />
+    <ProjectReference Include="..\..\models\webstore\webstore.csproj" />
+    <ProjectReference Include="..\..\DataContext\DataContext.csproj" />
   </ItemGroup>
 
 </Project>
