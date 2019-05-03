@@ -1,2 +1,10 @@
 codebase/webservices/Product/bin/
-codebase/webservices/Product.Tests/bin/
+codebase/webservices/Product/obj/
+codebase/DataContext/bin/
+codebase/DataContext/obj/
+codebase/Gateways/webgateway/bin/
+codebase/Gateways/webgateway/obj/
+codebase/Models/bin/
+codebase/Models/obj/
+codebase/Test/webservices/bin/
+codebase/Test/webservices/obj/
