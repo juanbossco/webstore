@@ -38,6 +38,7 @@ namespace Webgateway.Controllers
                     Console.WriteLine("\nMessage :{0} ", e.Message);
                 }
             }
+            
             return Ok(result);
         }
 
