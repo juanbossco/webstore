@@ -12,3 +12,8 @@
 /Users/juanlopez/Projects/webstore/codebase/webservices/Product/obj/Debug/netcoreapp2.2/Product.RazorTargetAssemblyInfo.cache
 /Users/juanlopez/Projects/webstore/codebase/webservices/Product/obj/Debug/netcoreapp2.2/Product.dll
 /Users/juanlopez/Projects/webstore/codebase/webservices/Product/obj/Debug/netcoreapp2.2/Product.pdb
+/Users/juanlopez/Projects/webstore/codebase/webservices/Product/bin/Debug/netcoreapp2.2/webstore.dll
+/Users/juanlopez/Projects/webstore/codebase/webservices/Product/bin/Debug/netcoreapp2.2/webstore.pdb
+/Users/juanlopez/Projects/webstore/codebase/webservices/Product/obj/Debug/netcoreapp2.2/Product.csproj.CopyComplete
+/Users/juanlopez/Projects/webstore/codebase/Webservices/Product/bin/Debug/netcoreapp2.2/DataContext.dll
+/Users/juanlopez/Projects/webstore/codebase/Webservices/Product/bin/Debug/netcoreapp2.2/DataContext.pdb

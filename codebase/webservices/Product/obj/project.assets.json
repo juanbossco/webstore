@@ -4438,6 +4438,29 @@
         "runtime": {
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
+      },
+      "DataContext/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "webstore": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/DataContext.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/DataContext.dll": {}
+        }
+      },
+      "webstore/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "compile": {
+          "bin/placeholder/webstore.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/webstore.dll": {}
+        }
       }
     }
   },
@@ -12080,13 +12103,25 @@
         "system.xml.xpath.xdocument.4.3.0.nupkg.sha512",
         "system.xml.xpath.xdocument.nuspec"
       ]
+    },
+    "DataContext/1.0.0": {
+      "type": "project",
+      "path": "../../DataContext/DataContext.csproj",
+      "msbuildProject": "../../DataContext/DataContext.csproj"
+    },
+    "webstore/1.0.0": {
+      "type": "project",
+      "path": "../../Models/webstore/webstore.csproj",
+      "msbuildProject": "../../Models/webstore/webstore.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
+      "DataContext >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
-      "Microsoft.NETCore.App >= 2.2.0"
+      "Microsoft.NETCore.App >= 2.2.0",
+      "webstore >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -12096,11 +12131,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/juanlopez/Projects/webstore/codebase/webservices/Product/Product.csproj",
+      "projectUniqueName": "/Users/juanlopez/Projects/webstore/codebase/Webservices/Product/Product.csproj",
       "projectName": "Product",
-      "projectPath": "/Users/juanlopez/Projects/webstore/codebase/webservices/Product/Product.csproj",
+      "projectPath": "/Users/juanlopez/Projects/webstore/codebase/Webservices/Product/Product.csproj",
       "packagesPath": "/Users/juanlopez/.nuget/packages/",
-      "outputPath": "/Users/juanlopez/Projects/webstore/codebase/webservices/Product/obj/",
+      "outputPath": "/Users/juanlopez/Projects/webstore/codebase/Webservices/Product/obj/",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "/usr/local/share/dotnet/sdk/NuGetFallbackFolder"
@@ -12116,7 +12151,14 @@
       },
       "frameworks": {
         "netcoreapp2.2": {
-          "projectReferences": {}
+          "projectReferences": {
+            "/Users/juanlopez/Projects/webstore/codebase/DataContext/DataContext.csproj": {
+              "projectPath": "/Users/juanlopez/Projects/webstore/codebase/DataContext/DataContext.csproj"
+            },
+            "/Users/juanlopez/Projects/webstore/codebase/Models/webstore/webstore.csproj": {
+              "projectPath": "/Users/juanlopez/Projects/webstore/codebase/Models/webstore/webstore.csproj"
+            }
+          }
         }
       },
       "warningProperties": {

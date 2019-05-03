@@ -24,15 +24,36 @@
     ".NETCoreApp,Version=v2.2": {
       "Product/1.0.0": {
         "dependencies": {
+          "DataContext": "1.0.0",
           "Microsoft.AspNetCore.App": "2.2.0",
           "Microsoft.AspNetCore.Razor.Design": "2.2.0",
-          "Microsoft.NETCore.App": "2.2.0"
+          "Microsoft.NETCore.App": "2.2.0",
+          "webstore": "1.0.0"
         },
         "runtime": {
           "Product.dll": {}
         },
         "compile": {
           "Product.dll": {}
+        }
+      },
+      "DataContext/1.0.0": {
+        "dependencies": {
+          "webstore": "1.0.0"
+        },
+        "runtime": {
+          "DataContext.dll": {}
+        },
+        "compile": {
+          "DataContext.dll": {}
+        }
+      },
+      "webstore/1.0.0": {
+        "runtime": {
+          "webstore.dll": {}
+        },
+        "compile": {
+          "webstore.dll": {}
         }
       },
       "Microsoft.AspNet.WebApi.Client/5.2.6": {
@@ -3233,6 +3254,16 @@
   },
   "libraries": {
     "Product/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DataContext/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "webstore/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

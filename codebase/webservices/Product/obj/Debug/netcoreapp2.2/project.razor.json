@@ -1,5 +1,5 @@
 {
-  "FilePath": "/Users/juanlopez/Projects/webstore/codebase/webservices/product/product.csproj",
+  "FilePath": "/Users/juanlopez/Projects/webstore/codebase/webservices/Product/Product.csproj",
   "Configuration": {
     "ConfigurationName": "MVC-2.1",
     "LanguageVersion": "2.1",
@@ -2756,6 +2756,6 @@
     ],
     "CSharpLanguageVersion": 703
   },
-  "RootNamespace": "product",
+  "RootNamespace": "Product",
   "Documents": []
 }

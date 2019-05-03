@@ -1,0 +1,12 @@
+/Users/juanlopez/Projects/webstore/codebase/DataContext/obj/Debug/netstandard2.0/DataContext.csprojAssemblyReference.cache
+/Users/juanlopez/Projects/webstore/codebase/DataContext/obj/Debug/netstandard2.0/DataContext.csproj.CoreCompileInputs.cache
+/Users/juanlopez/Projects/webstore/codebase/DataContext/obj/Debug/netstandard2.0/DataContext.AssemblyInfoInputs.cache
+/Users/juanlopez/Projects/webstore/codebase/DataContext/obj/Debug/netstandard2.0/DataContext.AssemblyInfo.cs
+/Users/juanlopez/Projects/webstore/codebase/DataContext/bin/Debug/netstandard2.0/DataContext.deps.json
+/Users/juanlopez/Projects/webstore/codebase/DataContext/bin/Debug/netstandard2.0/DataContext.dll
+/Users/juanlopez/Projects/webstore/codebase/DataContext/bin/Debug/netstandard2.0/DataContext.pdb
+/Users/juanlopez/Projects/webstore/codebase/DataContext/bin/Debug/netstandard2.0/webstore.dll
+/Users/juanlopez/Projects/webstore/codebase/DataContext/bin/Debug/netstandard2.0/webstore.pdb
+/Users/juanlopez/Projects/webstore/codebase/DataContext/obj/Debug/netstandard2.0/DataContext.csproj.CopyComplete
+/Users/juanlopez/Projects/webstore/codebase/DataContext/obj/Debug/netstandard2.0/DataContext.dll
+/Users/juanlopez/Projects/webstore/codebase/DataContext/obj/Debug/netstandard2.0/DataContext.pdb

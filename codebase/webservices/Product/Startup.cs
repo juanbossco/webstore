@@ -10,10 +10,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Product.db.Contracts;
-using Product.db;
+using Webstore.DataContext;
 
-namespace Product
+namespace Webservice.Product
 {
     public class Startup
     {
@@ -28,8 +27,7 @@ namespace Product
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
-
-            services.AddSingleton<IDbProduct,DbProduct>();
+            services.AddSingleton<IProductContext,ProductContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
