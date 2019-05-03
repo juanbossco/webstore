@@ -1,9 +1,0 @@
-/Users/juanlopez/Projects/webstore/codebase/models/webstore/obj/Debug/netstandard2.0/webstore.csprojAssemblyReference.cache
-/Users/juanlopez/Projects/webstore/codebase/models/webstore/obj/Debug/netstandard2.0/webstore.csproj.CoreCompileInputs.cache
-/Users/juanlopez/Projects/webstore/codebase/models/webstore/obj/Debug/netstandard2.0/webstore.AssemblyInfoInputs.cache
-/Users/juanlopez/Projects/webstore/codebase/models/webstore/obj/Debug/netstandard2.0/webstore.AssemblyInfo.cs
-/Users/juanlopez/Projects/webstore/codebase/models/webstore/bin/Debug/netstandard2.0/webstore.deps.json
-/Users/juanlopez/Projects/webstore/codebase/models/webstore/bin/Debug/netstandard2.0/webstore.dll
-/Users/juanlopez/Projects/webstore/codebase/models/webstore/bin/Debug/netstandard2.0/webstore.pdb
-/Users/juanlopez/Projects/webstore/codebase/models/webstore/obj/Debug/netstandard2.0/webstore.dll
-/Users/juanlopez/Projects/webstore/codebase/models/webstore/obj/Debug/netstandard2.0/webstore.pdb
