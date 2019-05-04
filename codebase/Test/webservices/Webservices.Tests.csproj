@@ -23,6 +23,7 @@
     <ProjectReference Include="..\..\models\webstore\webstore.csproj" />
     <ProjectReference Include="..\..\DataContext\DataContext.csproj" />
     <ProjectReference Include="..\..\Webservices\Cart\Cart.csproj" />
+    <ProjectReference Include="..\..\Webservices\Order\Order.csproj" />
   </ItemGroup>
 
 </Project>

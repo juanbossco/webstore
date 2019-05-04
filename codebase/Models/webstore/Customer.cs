@@ -13,8 +13,14 @@ namespace Webstore.Models
 
     public class Customer
     {
+        public Customer(string firstName, string lastName, string email)
+        {
+            this.FirstName = firstName;
+            this.LastName = lastName;
+            this.Email = email;
+        }
         public string Email { get; set; }
-        public string FirtName { get; set; }
+        public string FirstName { get; set; }
         public string LastName { get; set; }
         public Address Address { get; set; }
         public string PhoneNumber { get; set; }

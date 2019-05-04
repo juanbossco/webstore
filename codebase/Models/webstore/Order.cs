@@ -16,9 +16,11 @@ namespace Webstore.Models
 
         public long OrderId { get; set; }
         public string OrderNumber { get; set; }
+        public bool IsCancelled { get; set; }
         public Customer Customer { get; set; }
-        public Cart Cart {get;set;}
+        public Cart Cart { get; set; }
         public DateTime PlacedDate { get; set; }
+        public DateTime CancelationDate { get; set; }
 
     }
 }

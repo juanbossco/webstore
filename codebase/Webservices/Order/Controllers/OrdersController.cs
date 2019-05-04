@@ -1,0 +1,52 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
+using Microsoft.AspNetCore.Mvc;
+using Webstore.DataContext.Contracts;
+using Webstore.DataContext;
+using Webstore.Models;
+
+namespace Webstore.Webservice.OrderApi
+{
+    [Route("api/[controller]")]
+    [ApiController]
+    public class OrdersController : ControllerBase
+    {
+        // GET api/orders
+        [HttpGet("{email}")]
+        public ActionResult<IEnumerable<string>> Get(string email)
+        {
+            return new string[] { "value1", "value2" };
+        }
+
+        // GET api/orders/5
+        [HttpGet("{id}")]
+        public ActionResult<string> Get(int id)
+        {
+            return "value";
+        }
+
+        // POST api/orders
+        // Create new Order
+        [HttpPost]
+        public ActionResult<Order> Post([FromBody] Order orderParam)
+        {
+            var order = new Order(orderParam.Customer, orderParam.Cart);
+            return Ok(order);
+        }
+
+        // PUT api/orders/5
+        // Update existing Order
+        [HttpPut("{id}")]
+        public void Put(int id, [FromBody] Order order)
+        {
+        }
+
+        // PUT api/orders/5
+        [HttpPost("{id}")]
+        public void Cancel(int id, [FromBody] string orderNumber)
+        {
+        }
+    }
+}

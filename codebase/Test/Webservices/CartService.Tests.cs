@@ -18,13 +18,10 @@ namespace Webstore.Test.Webservice
     public class CartServiceTests
     {
         private readonly TestServer _server;
-        //private readonly HttpClient _client;
         public CartServiceTests()
         {
             _server = new TestServer(new WebHostBuilder()
                 .UseStartup<Webstore.Webservice.CartApi.Startup>());
-            //_client = _server.CreateClient();
-
         }
 
         [Fact]
@@ -53,8 +50,8 @@ namespace Webstore.Test.Webservice
             var product = new Product(1, "cup", 10.5);
             var expectedQuantity = 3;
             var cartProduct = new CartProduct(product, expectedQuantity);
-            //When
 
+            //When
             var content = new StringContent(JsonConvert.SerializeObject(cartProduct), Encoding.UTF8, "application/json");
             using (HttpClient client = _server.CreateClient())
             {
@@ -63,6 +60,7 @@ namespace Webstore.Test.Webservice
                 var responseBody = await response.Content.ReadAsStringAsync();
                 cart = JsonConvert.DeserializeObject<Cart>(responseBody);
             }
+            
             //Then
             Assert.True(cart != null, "Cart is null");
             Assert.True(cart.Products.Count() > 0, "No Products were added");
