@@ -28,10 +28,13 @@ namespace Webstore.Webservice.CartApi
         }
 
         // POST api/cart
-        [HttpPost]
-        public void Post([FromBody] Cart cart)
+        // For testing purposes the session Id is passed in the query string
+        [HttpPost("{sessionId}")]
+        public ActionResult<Cart> Post([FromBody] CartProduct product, string sessionId)
         {
-            //TODO: save to DB
+            var cart = _cartCtxt.Get(sessionId);
+            cart.Update(product);
+            return Ok(cart);
         }
 
         // DELETE api/cart/5

@@ -1,14 +1,2 @@
-codebase/webservices/Product/bin/
-codebase/webservices/Product/obj/
-codebase/DataContext/bin/
-codebase/DataContext/obj/
-codebase/Gateways/webgateway/bin/
-codebase/Gateways/webgateway/obj/
-codebase/Models/webstore/bin/
-codebase/Models/webstore/obj/
-codebase/Test/webservices/bin/
-codebase/Test/webservices/obj/
-codebase/Test/DataContext/bin/
-codebase/Test/DataContext/obj/
-codebase/Test/Models/bin/
-codebase/Test/Models/obj/
+bin
+obj
