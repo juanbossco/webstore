@@ -17,7 +17,8 @@ namespace Webstore.Webgateway.Clients
             using (HttpClient client = new HttpClient())
             {
                 var content = new StringContent(JsonConvert.SerializeObject(order), Encoding.UTF8, "application/json");
-                var response = await client.PostAsync(_orderClientUrl + "api/products", content);
+                var response = await client.PostAsync(_orderClientUrl + "api/orders", content);
+                response.EnsureSuccessStatusCode();
                 var responseString = await response.Content.ReadAsStringAsync();
 
                 result = JsonConvert.DeserializeObject<Order>(responseString);
