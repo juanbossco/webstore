@@ -24,6 +24,7 @@
     <ProjectReference Include="..\..\DataContext\DataContext.csproj" />
     <ProjectReference Include="..\..\Webservices\Cart\Cart.csproj" />
     <ProjectReference Include="..\..\Webservices\Order\Order.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\Infrastructure.csproj" />
   </ItemGroup>
 
 </Project>

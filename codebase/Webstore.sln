@@ -31,6 +31,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cart", "Webservices\Cart\Ca
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order", "Webservices\Order\Order.csproj", "{7E559367-C4CD-4B60-90B9-6C5D9D790757}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{8AA5F09D-925B-4499-8155-41C31E783103}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -152,6 +154,18 @@ Global
 		{7E559367-C4CD-4B60-90B9-6C5D9D790757}.Release|x64.Build.0 = Release|Any CPU
 		{7E559367-C4CD-4B60-90B9-6C5D9D790757}.Release|x86.ActiveCfg = Release|Any CPU
 		{7E559367-C4CD-4B60-90B9-6C5D9D790757}.Release|x86.Build.0 = Release|Any CPU
+		{8AA5F09D-925B-4499-8155-41C31E783103}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8AA5F09D-925B-4499-8155-41C31E783103}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8AA5F09D-925B-4499-8155-41C31E783103}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{8AA5F09D-925B-4499-8155-41C31E783103}.Debug|x64.Build.0 = Debug|Any CPU
+		{8AA5F09D-925B-4499-8155-41C31E783103}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{8AA5F09D-925B-4499-8155-41C31E783103}.Debug|x86.Build.0 = Debug|Any CPU
+		{8AA5F09D-925B-4499-8155-41C31E783103}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8AA5F09D-925B-4499-8155-41C31E783103}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8AA5F09D-925B-4499-8155-41C31E783103}.Release|x64.ActiveCfg = Release|Any CPU
+		{8AA5F09D-925B-4499-8155-41C31E783103}.Release|x64.Build.0 = Release|Any CPU
+		{8AA5F09D-925B-4499-8155-41C31E783103}.Release|x86.ActiveCfg = Release|Any CPU
+		{8AA5F09D-925B-4499-8155-41C31E783103}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E428279E-1680-4C71-A0F1-2EE3E90BDF1A} = {AE53D9F2-7E53-491A-9DC3-86853D8A5C79}

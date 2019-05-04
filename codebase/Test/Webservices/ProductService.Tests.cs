@@ -11,6 +11,7 @@ using Newtonsoft.Json;
 using System.Json;
 using System.Text;
 using System.Linq;
+using Webstore.Infrastructure;
 
 namespace Webstore.Test.Webservice
 {
@@ -29,22 +30,28 @@ namespace Webstore.Test.Webservice
         [Fact]
         public async Task CanGetProducts()
         {
-            var response = await _client.GetAsync("/api/products");
-            response.EnsureSuccessStatusCode();
-            var responseString = await response.Content.ReadAsStringAsync();
-            var result = JsonConvert.DeserializeObject<IEnumerable<Webstore.Models.Product>>(responseString);
-            Assert.False(string.IsNullOrEmpty(responseString));
+            IEnumerable<Webstore.Models.Product> products = null;
+
+            using (HttpClient client = _server.CreateClient())
+            {
+                products = await ServiceClient.GetAsync<IEnumerable<Webstore.Models.Product>>(client, "/api/products");
+            }
+
+            Assert.True(products != null, "Failed to get Products");
         }
 
         [Fact]
         public async Task CanAddProduct()
         {
-            var product = JsonConvert.SerializeObject(new { Name = "abcd", Price = 10.5 });
-            var content = new StringContent(product.ToString(), Encoding.UTF8, "application/json");
-            var response = await _client.PostAsync("api/products", content);
-            response.EnsureSuccessStatusCode();
-            var responseString = await response.Content.ReadAsStringAsync();
-            var result = JsonConvert.DeserializeObject<Webstore.Models.Product>(responseString);
+            var product = new { Name = "abcd", Price = 10.5 };
+            Webstore.Models.Product result = null;
+
+            using (HttpClient client = _server.CreateClient())
+            {
+                result = await ServiceClient.PostAsync<Webstore.Models.Product>(client, "/api/products", product);
+            }
+
+            Assert.True(result != null);
             Assert.True(result.ProductId == 1);
             Assert.True(result.Name == "abcd");
             Assert.True(result.Price == 10.5);
@@ -53,21 +60,27 @@ namespace Webstore.Test.Webservice
         [Fact]
         public async Task AddAndGetProduct()
         {
-            //Given
-            var product = JsonConvert.SerializeObject(new { Name = "abcd", Price = 10.5 });
-            var content = new StringContent(product.ToString(), Encoding.UTF8, "application/json");
-            var response = await _client.PostAsync("api/products", content);
-            response.EnsureSuccessStatusCode();
-            //When
-            response = await _client.GetAsync("/api/products");
-            response.EnsureSuccessStatusCode();
-            var responseString = await response.Content.ReadAsStringAsync();
-            var result = JsonConvert.DeserializeObject<IEnumerable<Webstore.Models.Product>>(responseString);
+            //Given a new Product
+            var product = new Webstore.Models.Product(1, "cup", 10.5);
+            //When the Product is added
+            using (HttpClient client = _server.CreateClient())
+            {
+                product = await ServiceClient.PostAsync<Webstore.Models.Product>(client, "/api/products", product);
+            }
+            //AND calling to get all products
+            IEnumerable<Webstore.Models.Product> products = null;
+
+            using (HttpClient client = _server.CreateClient())
+            {
+                products = await ServiceClient.GetAsync<IEnumerable<Webstore.Models.Product>>(client, "/api/products");
+            }
+
             //Then
-            var newProduct = result.FirstOrDefault();
+            Assert.NotNull(products);
+            var newProduct = products.FirstOrDefault();
             Assert.NotNull(newProduct);
             Assert.True(newProduct.ProductId == 1);
-            Assert.True(newProduct.Name == "abcd");
+            Assert.True(newProduct.Name == "cup", "Product name doest not match");
             Assert.True(newProduct.Price == 10.5);
         }
     }
