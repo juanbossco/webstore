@@ -13,7 +13,7 @@ using Microsoft.Extensions.Options;
 using Webstore.DataContext.Contracts;
 using Webstore.DataContext;
 
-namespace Webservice.CartApi
+namespace Webstore.Webservice.CartApi
 {
     public class Startup
     {

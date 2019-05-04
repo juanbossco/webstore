@@ -12,7 +12,7 @@ using System.Json;
 using System.Text;
 using System.Linq;
 
-namespace Product.Tests
+namespace Webstore.Test.Webservice
 {
     public class ProductsControllerTests
     {
@@ -21,7 +21,7 @@ namespace Product.Tests
         public ProductsControllerTests()
         {
             _server = new TestServer(new WebHostBuilder()
-                .UseStartup<Webservice.ProductApi.Startup>());
+                .UseStartup<Webstore.Webservice.ProductApi.Startup>());
             _client = _server.CreateClient();
 
         }

@@ -7,7 +7,7 @@ using Webstore.Models;
 using Webstore.DataContext.Contracts;
 using Webstore.DataContext;
 
-namespace Webservice.CartApi
+namespace Webstore.Webservice.CartApi
 {
     [Route("api/[controller]")]
     [ApiController]

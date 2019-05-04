@@ -7,9 +7,9 @@ using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
-using Webservice.ProductApi;
+using Webstore.Webservice.ProductApi;
 
-namespace Webservice.ProductApi
+namespace Webstore.Webservice.ProductApi
 {
     public class Program
     {

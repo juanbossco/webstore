@@ -8,7 +8,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Logging;
 
-namespace Webservice.CartApi
+namespace Webstore.Webservice.CartApi
 {
     public class Program
     {
