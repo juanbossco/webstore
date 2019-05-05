@@ -4,40 +4,24 @@ using Newtonsoft.Json;
 using System.Net.Http;
 using System.Threading.Tasks;
 using System.Text;
+using Webstore.Infrastructure;
 
 namespace Webstore.Webgateway.Clients
 {
     public class CartClient : ICartClient
     {
-        private readonly string _cartClientUrl = "http://localhost:5000/";
+        private readonly string _cartClientUrl = "http://localhost:6000/api/cart/";
 
         public async Task<Cart> Get(string sessionId)
         {
-            Cart result = null;
-
-            using (HttpClient client = new HttpClient())
-            {
-                var response = await client.GetAsync(_cartClientUrl + "api/cart" + sessionId);
-                response.EnsureSuccessStatusCode();
-                var responseBody = await response.Content.ReadAsStringAsync();
-                result = JsonConvert.DeserializeObject<Cart>(responseBody);
-            }
-
+            var result = await ServiceClient.GetAsync<Cart>(_cartClientUrl + sessionId);
             return result;
         }
 
         public async Task<Cart> Update(string sessionId, CartProduct cartProduct)
         {
-            Cart cart = null;
-            var content = new StringContent(JsonConvert.SerializeObject(cartProduct), Encoding.UTF8, "application/json");
-            using (HttpClient client = new HttpClient())
-            {
-                var response = await client.PostAsync(_cartClientUrl + "api/cart/" + sessionId, content);
-                response.EnsureSuccessStatusCode();
-                var responseBody = await response.Content.ReadAsStringAsync();
-                cart = JsonConvert.DeserializeObject<Cart>(responseBody);
-            }
-            return cart;
+            var result = await ServiceClient.PostAsync<Cart>(_cartClientUrl + sessionId, cartProduct);
+            return result;
         }
     }
 }

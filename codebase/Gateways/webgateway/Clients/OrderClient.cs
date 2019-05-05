@@ -4,26 +4,25 @@ using System.Threading.Tasks;
 using System.Net.Http;
 using Newtonsoft.Json;
 using System.Text;
+using System.Collections.Generic;
+using Webstore.Infrastructure;
+
 
 namespace Webstore.Webgateway.Clients
 {
     public class OrderClient : IOrderClient
     {
-        private readonly string _orderClientUrl = "";
+        private readonly string _orderClientUrl = "http://localhost:7000/api/orders/";
+
+        public async Task<IEnumerable<Order>> Get(string email)
+        {
+            var result = await ServiceClient.GetAsync<IEnumerable<Order>>(_orderClientUrl + email);
+            return result;
+        }
+
         public async Task<Order> Post(Order order)
         {
-            Order result = null;
-
-            using (HttpClient client = new HttpClient())
-            {
-                var content = new StringContent(JsonConvert.SerializeObject(order), Encoding.UTF8, "application/json");
-                var response = await client.PostAsync(_orderClientUrl + "api/orders", content);
-                response.EnsureSuccessStatusCode();
-                var responseString = await response.Content.ReadAsStringAsync();
-
-                result = JsonConvert.DeserializeObject<Order>(responseString);
-            }
-
+            var result = await ServiceClient.PostAsync<Order>(_orderClientUrl, order);
             return result;
         }
     }

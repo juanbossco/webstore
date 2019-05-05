@@ -7,62 +7,34 @@ using System.Net.Http;
 using Webstore.Models;
 using Newtonsoft.Json;
 using System.Json;
+using Webstore.Webgateway.Clients;
+using Webstore.Webgateway.Clients.Contracts;
 
 namespace Webgateway.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/webstore/[controller]")]
     [ApiController]
     public class ProductsController : ControllerBase
     {
-        private string _productClientUrl = "http://localhost:5000/";
-        public ProductsController()
+        private readonly IProductClient _productClient;
+        public ProductsController(IProductClient productClient)
         {
-
+            this._productClient = productClient;
         }
+
         // GET api/products
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<string>>> Get()
+        public async Task<ActionResult<IEnumerable<string>>> GetAll()
         {
-            IEnumerable<Product> result = null;
-
-            using (HttpClient client = new HttpClient())
-            {
-                try
-                {
-                    string responseBody = await client.GetStringAsync(_productClientUrl + "api/products");
-                    result = JsonConvert.DeserializeObject<IEnumerable<Product>>(responseBody);
-                }
-                catch (HttpRequestException e)
-                {
-                    Console.WriteLine("Exception in Product gateway Get Products!");
-                    Console.WriteLine("\nMessage :{0} ", e.Message);
-                }
-            }
-            
+            var result = await _productClient.Get();
             return Ok(result);
         }
 
         // GET api/products/5
         [HttpGet("{id}")]
-        public async Task<ActionResult<string>> Get(int id)
+        public async Task<ActionResult<Product>> Get(int id)
         {
-            Product result = null;
-            using (HttpClient client = new HttpClient())
-            {
-                try
-                {
-                    string responseBody = await client.GetStringAsync(_productClientUrl + "api/products/" + id.ToString());
-                    result = JsonConvert.DeserializeObject<Product>(responseBody);
-                }
-                catch (HttpRequestException e)
-                {
-                    Console.WriteLine("Exception in Product gateway Get Product!");
-                    Console.WriteLine("\nMessage :{0} ", e.Message);
-                }
-            }
-
-            if (result == null)
-                return NotFound();
+            var result = await _productClient.Get(id);
             return Ok(result);
         }
     }

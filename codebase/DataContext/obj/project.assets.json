@@ -226,8 +226,8 @@
     },
     "webstore/1.0.0": {
       "type": "project",
-      "path": "../Models/webstore/webstore.csproj",
-      "msbuildProject": "../Models/webstore/webstore.csproj"
+      "path": "../models/webstore/webstore.csproj",
+      "msbuildProject": "../models/webstore/webstore.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -264,8 +264,8 @@
       "frameworks": {
         "netstandard2.0": {
           "projectReferences": {
-            "/Users/juanlopez/Projects/webstore/codebase/Models/webstore/webstore.csproj": {
-              "projectPath": "/Users/juanlopez/Projects/webstore/codebase/Models/webstore/webstore.csproj"
+            "/Users/juanlopez/Projects/webstore/codebase/models/webstore/webstore.csproj": {
+              "projectPath": "/Users/juanlopez/Projects/webstore/codebase/models/webstore/webstore.csproj"
             }
           }
         }

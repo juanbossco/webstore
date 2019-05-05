@@ -4,9 +4,9 @@ using System.Collections.Generic;
 
 namespace Webstore.Webgateway.Clients.Contracts
 {
-    public interface IOrderClient
+    public interface IProductClient
     {
-         Task<Order> Post(Order order);
-         Task<IEnumerable<Order>> Get(string email);
+        Task<IEnumerable<Product>> Get();
+        Task<Product> Get(int productId);
     }
 }

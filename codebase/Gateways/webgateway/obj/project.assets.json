@@ -4448,6 +4448,19 @@
           "lib/netstandard1.3/System.Xml.XPath.XDocument.dll": {}
         }
       },
+      "Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.2"
+        },
+        "compile": {
+          "bin/placeholder/Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Infrastructure.dll": {}
+        }
+      },
       "webstore/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -12132,14 +12145,20 @@
         "system.xml.xpath.xdocument.nuspec"
       ]
     },
+    "Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../../Infrastructure/Infrastructure.csproj",
+      "msbuildProject": "../../Infrastructure/Infrastructure.csproj"
+    },
     "webstore/1.0.0": {
       "type": "project",
-      "path": "../../Models/webstore/webstore.csproj",
-      "msbuildProject": "../../Models/webstore/webstore.csproj"
+      "path": "../../models/webstore/webstore.csproj",
+      "msbuildProject": "../../models/webstore/webstore.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
+      "Infrastructure >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
       "Microsoft.NETCore.App >= 2.2.0",
@@ -12176,8 +12195,11 @@
       "frameworks": {
         "netcoreapp2.2": {
           "projectReferences": {
-            "/Users/juanlopez/Projects/webstore/codebase/Models/webstore/webstore.csproj": {
-              "projectPath": "/Users/juanlopez/Projects/webstore/codebase/Models/webstore/webstore.csproj"
+            "/Users/juanlopez/Projects/webstore/codebase/Infrastructure/Infrastructure.csproj": {
+              "projectPath": "/Users/juanlopez/Projects/webstore/codebase/Infrastructure/Infrastructure.csproj"
+            },
+            "/Users/juanlopez/Projects/webstore/codebase/models/webstore/webstore.csproj": {
+              "projectPath": "/Users/juanlopez/Projects/webstore/codebase/models/webstore/webstore.csproj"
             }
           }
         }

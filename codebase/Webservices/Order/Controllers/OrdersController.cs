@@ -13,11 +13,19 @@ namespace Webstore.Webservice.OrderApi
     [ApiController]
     public class OrdersController : ControllerBase
     {
+        private readonly IOrderContext _orderCtx;
+
+        public OrdersController(IOrderContext orderCtx)
+        {
+            this._orderCtx = orderCtx;
+        }
+
         // GET api/orders
         [HttpGet("{email}")]
-        public ActionResult<IEnumerable<string>> Get(string email)
+        public ActionResult<IEnumerable<Order>> Get(string email)
         {
-            return new string[] { "value1", "value2" };
+            var orders = _orderCtx.GetAll(email);
+            return Ok(orders);
         }
 
         // GET api/orders/5

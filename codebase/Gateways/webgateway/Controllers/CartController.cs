@@ -14,25 +14,27 @@ namespace Webgateway.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class CheckoutController : ControllerBase
+    public class CartController : ControllerBase
     {
         private readonly ICartClient _cartClient;
-        private readonly IOrderClient _orderClient;
 
-        public CheckoutController(ICartClient cartClient, IOrderClient orderClient)
+        public CartController(ICartClient cartClient)
         {
             this._cartClient = cartClient;
-            this._orderClient = orderClient;
         }
 
-        [HttpPost]
-        [Route("api/checkout/{sessionId}")]
-        public async Task<ActionResult<Order>> Post([FromBody] Customer customer, string sessionId)
+        [HttpGet("{sessionId}")]
+        public async Task<ActionResult<Cart>> Get(string sessionId)
         {
             var cart = await _cartClient.Get(sessionId);
-            var order = new Order(customer,cart);
-            await _orderClient.Post(order);
-            return Ok(order);
+            return Ok(cart);
+        }
+
+        [HttpPost("{sessionId}")]
+        public async Task<ActionResult<Cart>> Post([FromBody] CartProduct product, string sessionId)
+        {
+            var cart = await _cartClient.Update(sessionId, product);
+            return Ok(cart);
         }
     }
 }

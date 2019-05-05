@@ -5,13 +5,13 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": ".NET Core Launch (web)",
+            "name": "Product Service",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/bin/Debug/netcoreapp2.2/Product.dll>",
+            "program": "${workspaceFolder}/codebase/Webservices/Product/bin/Debug/netcoreapp2.2/product.dll",
             "args": [],
-            "cwd": "${workspaceFolder}",
+            "cwd": "${workspaceFolder}/codebase/webservices/product",
             "stopAtEntry": false,
             "launchBrowser": {
                 "enabled": true
@@ -23,15 +23,33 @@
                 "/Views": "${workspaceFolder}/Views"
             }
         },
-
         {
-            "name": ".NET Core Launch (web)",
+            "name": "Order Service",
             "type": "coreclr",
             "request": "launch",
             "preLaunchTask": "build",
-            "program": "${workspaceFolder}/codebase/webservices/product/bin/Debug/netcoreapp2.2/product.dll",
+            "program": "${workspaceFolder}/codebase/Webservices/Order/bin/Debug/netcoreapp2.2/order.dll",
             "args": [],
-            "cwd": "${workspaceFolder}/codebase/webservices/product",
+            "cwd": "${workspaceFolder}/codebase/webservices/order",
+            "stopAtEntry": false,
+            "launchBrowser": {
+                "enabled": true
+            },
+            "env": {
+                "ASPNETCORE_ENVIRONMENT": "Development"
+            },
+            "sourceFileMap": {
+                "/Views": "${workspaceFolder}/Views"
+            }
+        },
+        {
+            "name": "Cart Service",
+            "type": "coreclr",
+            "request": "launch",
+            "preLaunchTask": "build",
+            "program": "${workspaceFolder}/codebase/Webservices/Cart/bin/Debug/netcoreapp2.2/cart.dll",
+            "args": [],
+            "cwd": "${workspaceFolder}/codebase/webservices/cart",
             "stopAtEntry": false,
             "launchBrowser": {
                 "enabled": true
