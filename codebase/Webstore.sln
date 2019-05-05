@@ -33,6 +33,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order", "Webservices\Order\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{8AA5F09D-925B-4499-8155-41C31E783103}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Events", "Events\Events.csproj", "{D83DA453-99B3-46AB-A65E-A8E4F6976B73}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -166,6 +168,18 @@ Global
 		{8AA5F09D-925B-4499-8155-41C31E783103}.Release|x64.Build.0 = Release|Any CPU
 		{8AA5F09D-925B-4499-8155-41C31E783103}.Release|x86.ActiveCfg = Release|Any CPU
 		{8AA5F09D-925B-4499-8155-41C31E783103}.Release|x86.Build.0 = Release|Any CPU
+		{D83DA453-99B3-46AB-A65E-A8E4F6976B73}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D83DA453-99B3-46AB-A65E-A8E4F6976B73}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D83DA453-99B3-46AB-A65E-A8E4F6976B73}.Debug|x64.ActiveCfg = Debug|Any CPU
+		{D83DA453-99B3-46AB-A65E-A8E4F6976B73}.Debug|x64.Build.0 = Debug|Any CPU
+		{D83DA453-99B3-46AB-A65E-A8E4F6976B73}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{D83DA453-99B3-46AB-A65E-A8E4F6976B73}.Debug|x86.Build.0 = Debug|Any CPU
+		{D83DA453-99B3-46AB-A65E-A8E4F6976B73}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D83DA453-99B3-46AB-A65E-A8E4F6976B73}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D83DA453-99B3-46AB-A65E-A8E4F6976B73}.Release|x64.ActiveCfg = Release|Any CPU
+		{D83DA453-99B3-46AB-A65E-A8E4F6976B73}.Release|x64.Build.0 = Release|Any CPU
+		{D83DA453-99B3-46AB-A65E-A8E4F6976B73}.Release|x86.ActiveCfg = Release|Any CPU
+		{D83DA453-99B3-46AB-A65E-A8E4F6976B73}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{E428279E-1680-4C71-A0F1-2EE3E90BDF1A} = {AE53D9F2-7E53-491A-9DC3-86853D8A5C79}
