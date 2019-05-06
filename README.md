@@ -1,4 +1,4 @@
 # webstore
 webstore application dotnet core
 
-![Alt text](resources/Webstore%20Architecture.png?raw=true "Optional Title")
+![BFF/Microservice Architecture](resources/Webstore%20Architecture.png?raw=true "BFF/Microservice Architecture")
