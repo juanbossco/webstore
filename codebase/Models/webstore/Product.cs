@@ -5,13 +5,14 @@ namespace Webstore.Models
 {
     public class Property
     {
-        public Property()
+        public Property(string name, string type)
         {
-
+            this.Name = name;
+            this.Type = type;
         }
         protected int PropertyId { get; set; }
-        public string Name { get; }
-        public string Type { get; }
+        public string Name { get; set;}
+        public string Type { get; set;}
     }
 
     public class ProductProperty

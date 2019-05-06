@@ -42,7 +42,12 @@ namespace Webstore.Webservice.ProductApi
             var result = new List<Webstore.Models.Product>();
             foreach (var product in products)
             {
-                result.Add(this._dbProduct.Add(product.Name, product.Price));
+                var newProduct = this._dbProduct.Add(product.Name, product.Price);
+                foreach (var property in product.Properties)
+                {
+                    newProduct.AddProperty(new Models.Property(property.Property.Name, property.Property.Type), property.Value);
+                }
+                result.Add(newProduct);
             }
             return Ok(result);
         }

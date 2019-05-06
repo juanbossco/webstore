@@ -43,7 +43,27 @@ namespace Webstore.Test.Webservice
         [Fact]
         public async Task CanAddProduct()
         {
-            var products = new[] { new { Name = "product vs", Price = 10.5 } };
+            var products = new[]
+            {
+                new
+                {
+                    Name = "product vs",
+                    Price = 10.5,
+                    Properties = new []
+                    {
+                        new
+                            {
+                                Property = new
+                                {
+                                    Name="Count",
+                                    Type="integer"
+                                },
+                                Value=10
+                            }
+                    }
+                }
+            };
+
             IEnumerable<Webstore.Models.Product> result = null;
 
             using (HttpClient client = _server.CreateClient())
@@ -57,13 +77,34 @@ namespace Webstore.Test.Webservice
             Assert.True(product.ProductId == 1);
             Assert.True(product.Name == "product vs");
             Assert.True(product.Price == 10.5);
+
         }
 
         [Fact]
         public async Task AddAndGetProduct()
         {
             //Given a new Product
-            var body = new[] { new { Name = "cup", Price = 10.5 } };
+            var body = new[]
+            {
+                new
+                {
+                    Name = "Tuscany Tea",
+                    Price = 10.5,
+                    Properties = new []
+                    {
+                        new
+                            {
+                                Property = new
+                                {
+                                    Name="Count",
+                                    Type="integer"
+                                },
+                                Value=10
+                            }
+                    }
+                }
+            };
+
             //When the Product is added
             using (HttpClient client = _server.CreateClient())
             {
@@ -82,8 +123,10 @@ namespace Webstore.Test.Webservice
             var newProduct = products.FirstOrDefault();
             Assert.NotNull(newProduct);
             Assert.True(newProduct.ProductId == 1);
-            Assert.True(newProduct.Name == "cup", "Product name doest not match");
+            Assert.True(newProduct.Name == "Tuscany Tea", "Product name doest not match");
             Assert.True(newProduct.Price == 10.5, "Product Price does not match");
+
+            Assert.True(newProduct.Properties.Count() > 0);
         }
     }
 }
