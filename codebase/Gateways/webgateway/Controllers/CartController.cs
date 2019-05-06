@@ -48,7 +48,7 @@ namespace Webstore.Webgateway.Controllers
 
             var cartProduct = new CartProduct(product, cartProductDto.Quantity);
             var cart = await _cartClient.Update(sessionId, cartProduct);
-            
+
             return Ok(cart);
         }
     }

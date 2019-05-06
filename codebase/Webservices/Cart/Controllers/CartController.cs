@@ -41,9 +41,10 @@ namespace Webstore.Webservice.CartApi
         }
 
         // DELETE api/cart/5
-        [HttpDelete("{orderNumber}")]
-        public void Delete(int orderNumber)
+        [HttpDelete("{sessionId}")]
+        public void Delete([FromBody] Cart cart, string sessionId)
         {
+            _cartCtxt.Delete(sessionId);
         }
     }
 }

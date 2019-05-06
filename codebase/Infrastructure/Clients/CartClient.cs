@@ -23,5 +23,10 @@ namespace Webstore.Infrastructure.Clients
             var result = await ServiceClient.PostAsync<Cart>(_cartClientUrl + sessionId, cartProduct);
             return result;
         }
+
+        public async Task Delete(string sessionId)
+        {
+            await ServiceClient.DeleteAsync(_cartClientUrl + sessionId);
+        }
     }
 }

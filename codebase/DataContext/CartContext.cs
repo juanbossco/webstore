@@ -23,5 +23,14 @@ namespace Webstore.DataContext
             }
             return cart;
         }
+
+        public void Delete(string sessionId)
+        {
+            var cart = _carts.SingleOrDefault(c => c.SessionId == sessionId);
+            if (cart == null)
+            {
+                _carts.Remove(cart);
+            }
+        }
     }
 }

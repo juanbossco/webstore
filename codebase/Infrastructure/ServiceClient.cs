@@ -38,6 +38,15 @@ namespace Webstore.Infrastructure
             return result;
         }
 
+        public static async Task DeleteAsync(string url)
+        {
+            using (HttpClient client = new HttpClient())
+            {
+                var response = await client.DeleteAsync(url);
+                response.EnsureSuccessStatusCode();
+            }
+        }
+
         public static async Task<T> GetAsync<T>(HttpClient client, string url)
         {
             var response = await client.GetAsync(url);

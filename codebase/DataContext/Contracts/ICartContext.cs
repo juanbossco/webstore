@@ -6,5 +6,6 @@ namespace Webstore.DataContext.Contracts
     public interface ICartContext
     {
          Cart Get(string sessionId);
+         void Delete(string sessionId);
     }
 }
