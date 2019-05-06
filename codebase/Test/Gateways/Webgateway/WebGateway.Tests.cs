@@ -25,6 +25,20 @@ namespace Webstore.Test.Gateways
         }
 
         [Fact]
+        public async Task CanGetAllProducts()
+        {
+            //Given
+            IEnumerable<Webstore.Models.Product> products = null;
+            //When
+            using (HttpClient client = _server.CreateClient())
+            {
+                products = await ServiceClient.GetAsync<IEnumerable<Webstore.Models.Product>>(client, "api/webstore/products/");
+            }
+            //Then
+            Assert.True(products != null);
+        }
+
+        [Fact]
         public async Task CanGetProduct()
         {
             Webstore.Models.Product product = null;
