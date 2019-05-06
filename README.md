@@ -1,4 +1,4 @@
 # webstore
 webstore application dotnet core
 
-![Alt text](/relative/webstore/img.jpg?raw=true "Optional Title")
+![Alt text](/relative/webstore/Webstore Architecture.jpg?raw=true "Optional Title")
