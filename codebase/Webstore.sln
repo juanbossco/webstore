@@ -15,9 +15,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "webstore", "Models\webstore
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{E3AC115C-7334-46E6-815E-23DF47C146EB}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "webservices", "webservices", "{185AB821-CE8E-47E0-84C0-2F989AF7BB75}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Webservices", "Webservices", "{185AB821-CE8E-47E0-84C0-2F989AF7BB75}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Product.Tests", "Test\webservices\Webservices.Tests.csproj", "{9853A2F7-F5C4-464D-A475-56CC61308DF8}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Product.Tests", "Test\Webservices\Webservices.Tests.csproj", "{9853A2F7-F5C4-464D-A475-56CC61308DF8}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Webservices", "Webservices", "{AB7D274F-242E-4CCB-9EC8-21AB04F2B016}"
 EndProject
