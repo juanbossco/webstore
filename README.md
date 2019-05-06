@@ -1,12 +1,12 @@
 # Architecture
+![BFF/Microservice Architecture](resources/Webstore%20Architecture.png?raw=true "BFF/Microservice Architecture")
+
 ## Architecture Overview
 ### Backend For Frontend (BFF) Architecture
 ### Gateway Architecture
 ### Microservice Architecture
 ### Event Driven Architecture
 ### Relational Dabase (SQL) & Non-Relational Database (NoSQL)
-
-![BFF/Microservice Architecture](resources/Webstore%20Architecture.png?raw=true "BFF/Microservice Architecture")
 
 ### Relational Dabase (SQL) & Non-Relational Database (NoSQL)
 SQL for transactional features
