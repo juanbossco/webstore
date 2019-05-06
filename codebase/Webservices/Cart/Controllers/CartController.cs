@@ -6,6 +6,8 @@ using Microsoft.AspNetCore.Mvc;
 using Webstore.Models;
 using Webstore.DataContext.Contracts;
 using Webstore.DataContext;
+using Webstore.Infrastructure;
+using Webstore.Infrastructure.Clients.Contracts;
 
 namespace Webstore.Webservice.CartApi
 {
@@ -14,6 +16,7 @@ namespace Webstore.Webservice.CartApi
     public class CartController : ControllerBase
     {
         private readonly ICartContext _cartCtxt;
+
         public CartController(ICartContext cartCtx)
         {
             this._cartCtxt = cartCtx;
@@ -30,10 +33,10 @@ namespace Webstore.Webservice.CartApi
         // POST api/cart
         // For testing purposes the session Id is passed in the query string
         [HttpPost("{sessionId}")]
-        public ActionResult<Cart> Post([FromBody] CartProduct product, string sessionId)
+        public ActionResult<Cart> Post([FromBody] CartProduct cartProduct, string sessionId)
         {
             var cart = _cartCtxt.Get(sessionId);
-            cart.Update(product);
+            cart.Update(cartProduct);
             return Ok(cart);
         }
 

@@ -10,10 +10,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
-using Webstore.Webgateway.Clients.Contracts;
-using Webstore.Webgateway.Clients;
+using Webstore.Infrastructure.Clients.Contracts;
+using Webstore.Infrastructure.Clients;
 
-namespace webgateway
+namespace Webstore.Webgateway
 {
     public class Startup
     {

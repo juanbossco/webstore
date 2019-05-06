@@ -1,4 +1,4 @@
-using Webstore.Webgateway.Clients.Contracts;
+using Webstore.Infrastructure.Clients.Contracts;
 using Webstore.Models;
 using Newtonsoft.Json;
 using System.Net.Http;
@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 using System.Text;
 using Webstore.Infrastructure;
 
-namespace Webstore.Webgateway.Clients
+namespace Webstore.Infrastructure.Clients
 {
     public class CartClient : ICartClient
     {
-        private readonly string _cartClientUrl = "http://localhost:6000/api/cart/";
+        private readonly string _cartClientUrl = "https://webstore-cartapi.azurewebsites.net/api/cart/";
 
         public async Task<Cart> Get(string sessionId)
         {

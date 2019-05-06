@@ -21,7 +21,7 @@ namespace Webstore.Webservice.OrderApi
         }
 
         // GET api/orders
-        [HttpGet("{email}")]
+        [HttpGet("customer/{email}")]
         public ActionResult<IEnumerable<Order>> Get(string email)
         {
             var orders = _orderCtx.GetAll(email);
@@ -30,9 +30,14 @@ namespace Webstore.Webservice.OrderApi
 
         // GET api/orders/5
         [HttpGet("{id}")]
-        public ActionResult<string> Get(int id)
+        public ActionResult<Order> Get(int id)
         {
-            return "value";
+            var order = _orderCtx.Get(id);
+            if (order == null)
+            {
+                return NotFound();
+            }
+            return order;
         }
 
         // POST api/orders

@@ -51,7 +51,7 @@ namespace Webstore.Infrastructure
         public static async Task<T> PostAsync<T>(HttpClient client, string url, object body)
         {
             var content = new StringContent(JsonConvert.SerializeObject(body), Encoding.UTF8, "application/json");
-            var response = await client.PostAsync("api/products", content);
+            var response = await client.PostAsync(url, content);
             response.EnsureSuccessStatusCode();
             var responseBody = await response.Content.ReadAsStringAsync();
             var result = JsonConvert.DeserializeObject<T>(responseBody);

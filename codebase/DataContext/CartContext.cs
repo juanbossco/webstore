@@ -19,6 +19,7 @@ namespace Webstore.DataContext
             if (cart == null)
             {
                 cart = new Cart(sessionId);
+                _carts.Add(cart);
             }
             return cart;
         }

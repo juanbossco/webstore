@@ -1,7 +1,7 @@
 using Webstore.Models;
 using System.Threading.Tasks;
 
-namespace Webstore.Webgateway.Clients.Contracts
+namespace Webstore.Infrastructure.Clients.Contracts
 {
     public interface ICartClient
     {

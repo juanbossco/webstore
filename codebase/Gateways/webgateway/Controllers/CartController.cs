@@ -7,20 +7,25 @@ using System.Net.Http;
 using Webstore.Models;
 using Newtonsoft.Json;
 using System.Json;
-using Webstore.Webgateway.Clients.Contracts;
-using Webstore.Webgateway.Clients;
+using Webstore.Infrastructure.Clients.Contracts;
+using Webstore.Infrastructure.Clients;
+using Webstore.Gateway.Dto;
 
-namespace Webgateway.Controllers
+namespace Webstore.Webgateway.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/webstore/[controller]")]
     [ApiController]
     public class CartController : ControllerBase
     {
         private readonly ICartClient _cartClient;
+        private readonly IProductClient _productClient;
 
-        public CartController(ICartClient cartClient)
+        public CartController(
+            ICartClient cartClient,
+            IProductClient productClient)
         {
             this._cartClient = cartClient;
+            this._productClient = productClient;
         }
 
         [HttpGet("{sessionId}")]
@@ -31,11 +36,19 @@ namespace Webgateway.Controllers
         }
 
         [HttpPost("{sessionId}")]
-        public async Task<ActionResult<Cart>> Post([FromBody] CartProduct product, string sessionId)
+        public async Task<ActionResult<Cart>> Post([FromBody] CartProductDto cartProductDto, string sessionId)
         {
-            if (product.Quantity < 1)
+            var product = await _productClient.Get(cartProductDto.ProductId);
+
+            if (product == null)
+                return BadRequest("Product does not exist.");
+
+            if (cartProductDto.Quantity < 1)
                 return BadRequest("Quantity cannot be less than 0");
-            var cart = await _cartClient.Update(sessionId, product);
+
+            var cartProduct = new CartProduct(product, cartProductDto.Quantity);
+            var cart = await _cartClient.Update(sessionId, cartProduct);
+            
             return Ok(cart);
         }
     }

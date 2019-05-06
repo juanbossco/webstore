@@ -7,10 +7,10 @@ using System.Net.Http;
 using Webstore.Models;
 using Newtonsoft.Json;
 using System.Json;
-using Webstore.Webgateway.Clients;
-using Webstore.Webgateway.Clients.Contracts;
+using Webstore.Infrastructure.Clients;
+using Webstore.Infrastructure.Clients.Contracts;
 
-namespace Webgateway.Controllers
+namespace Webstore.Webgateway.Controllers
 {
     [Route("api/webstore/[controller]")]
     [ApiController]

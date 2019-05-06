@@ -7,10 +7,10 @@ using System.Net.Http;
 using Webstore.Models;
 using Newtonsoft.Json;
 using System.Json;
-using Webstore.Webgateway.Clients.Contracts;
-using Webstore.Webgateway.Clients;
+using Webstore.Infrastructure.Clients.Contracts;
+using Webstore.Infrastructure.Clients;
 
-namespace Webgateway.Controllers
+namespace Webstore.Webgateway.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
@@ -26,12 +26,12 @@ namespace Webgateway.Controllers
         }
 
         [HttpPost]
-        [Route("api/checkout/{sessionId}")]
+        [Route("{sessionId}")]
         public async Task<ActionResult<Order>> Post([FromBody] Customer customer, string sessionId)
         {
             var cart = await _cartClient.Get(sessionId);
-            var order = new Order(customer,cart);
-            await _orderClient.Post(order);
+            var order = new Order(customer, cart);
+            order = await _orderClient.Post(order);
             return Ok(order);
         }
     }

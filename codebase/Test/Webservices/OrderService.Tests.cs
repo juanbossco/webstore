@@ -14,6 +14,7 @@ using System.Linq;
 using Webstore.Models;
 using Webstore.DataContext;
 using Webstore.DataContext.Contracts;
+using Webstore.Infrastructure;
 
 namespace Webstore.Test.Webservice
 {
@@ -45,20 +46,19 @@ namespace Webstore.Test.Webservice
 
             //When
 
-            var order = new Order(customer,cart);
+            var order = new Order(customer, cart);
             Order expectedOrder = null;
-
-            var content = new StringContent(JsonConvert.SerializeObject(order), Encoding.UTF8, "application/json");
+            IEnumerable<Order> customerOrders = null;
 
             using (HttpClient client = _server.CreateClient())
             {
-                var response = await client.PostAsync("api/orders/", content);
-                response.EnsureSuccessStatusCode();
-                var responseBody = await response.Content.ReadAsStringAsync();
-                expectedOrder = JsonConvert.DeserializeObject<Order>(responseBody);
+                expectedOrder = await ServiceClient.PostAsync<Order>(client, "api/orders/", order);
+                expectedOrder = await ServiceClient.GetAsync<Order>(client, "api/orders/1");
+                customerOrders = await ServiceClient.GetAsync<IEnumerable<Order>>(client, "api/orders/customer/juanbossco@gmail.com");
             }
 
             Assert.True(expectedOrder != null, "Order is null");
+            Assert.True(customerOrders != null, "Customer Orders is empy");
         }
     }
 }

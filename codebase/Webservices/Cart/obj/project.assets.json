@@ -4452,6 +4452,20 @@
           "bin/placeholder/DataContext.dll": {}
         }
       },
+      "Infrastructure/1.0.0": {
+        "type": "project",
+        "framework": ".NETStandard,Version=v2.0",
+        "dependencies": {
+          "Newtonsoft.Json": "12.0.2",
+          "webstore": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Infrastructure.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Infrastructure.dll": {}
+        }
+      },
       "webstore/1.0.0": {
         "type": "project",
         "framework": ".NETStandard,Version=v2.0",
@@ -12112,6 +12126,11 @@
       "path": "../../DataContext/DataContext.csproj",
       "msbuildProject": "../../DataContext/DataContext.csproj"
     },
+    "Infrastructure/1.0.0": {
+      "type": "project",
+      "path": "../../Infrastructure/Infrastructure.csproj",
+      "msbuildProject": "../../Infrastructure/Infrastructure.csproj"
+    },
     "webstore/1.0.0": {
       "type": "project",
       "path": "../../Models/webstore/webstore.csproj",
@@ -12121,6 +12140,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v2.2": [
       "DataContext >= 1.0.0",
+      "Infrastructure >= 1.0.0",
       "Microsoft.AspNetCore.App >= 2.2.0",
       "Microsoft.AspNetCore.Razor.Design >= 2.2.0",
       "Microsoft.NETCore.App >= 2.2.0",
@@ -12157,6 +12177,9 @@
           "projectReferences": {
             "/Users/juanlopez/Projects/webstore/codebase/DataContext/DataContext.csproj": {
               "projectPath": "/Users/juanlopez/Projects/webstore/codebase/DataContext/DataContext.csproj"
+            },
+            "/Users/juanlopez/Projects/webstore/codebase/Infrastructure/Infrastructure.csproj": {
+              "projectPath": "/Users/juanlopez/Projects/webstore/codebase/Infrastructure/Infrastructure.csproj"
             },
             "/Users/juanlopez/Projects/webstore/codebase/Models/webstore/webstore.csproj": {
               "projectPath": "/Users/juanlopez/Projects/webstore/codebase/Models/webstore/webstore.csproj"

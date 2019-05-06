@@ -1,5 +1,5 @@
 using Webstore.Models;
-using Webstore.Webgateway.Clients.Contracts;
+using Webstore.Infrastructure.Clients.Contracts;
 using System.Threading.Tasks;
 using System.Net.Http;
 using Newtonsoft.Json;
@@ -8,11 +8,11 @@ using System.Collections.Generic;
 using Webstore.Infrastructure;
 
 
-namespace Webstore.Webgateway.Clients
+namespace Webstore.Infrastructure.Clients
 {
     public class OrderClient : IOrderClient
     {
-        private readonly string _orderClientUrl = "http://localhost:7000/api/orders/";
+        private readonly string _orderClientUrl = "https://webstore-orderapi.azurewebsites.net/api/orders/";
 
         public async Task<IEnumerable<Order>> Get(string email)
         {

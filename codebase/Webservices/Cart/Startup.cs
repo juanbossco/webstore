@@ -12,6 +12,8 @@ using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using Webstore.DataContext.Contracts;
 using Webstore.DataContext;
+using Webstore.Infrastructure.Clients.Contracts;
+using Webstore.Infrastructure.Clients;
 
 namespace Webstore.Webservice.CartApi
 {
@@ -29,6 +31,7 @@ namespace Webstore.Webservice.CartApi
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_2);
             services.AddSingleton<ICartContext,CartContext>();
+            services.AddSingleton<IProductClient,ProductClient>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

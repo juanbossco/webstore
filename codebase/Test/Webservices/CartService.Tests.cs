@@ -12,6 +12,7 @@ using System.Json;
 using System.Text;
 using System.Linq;
 using Webstore.Models;
+using Webstore.Infrastructure;
 
 namespace Webstore.Test.Webservice
 {
@@ -33,8 +34,7 @@ namespace Webstore.Test.Webservice
             //When
             using (HttpClient client = _server.CreateClient())
             {
-                string responseBody = await client.GetStringAsync("api/cart/" + sessionId);
-                cart = JsonConvert.DeserializeObject<Cart>(responseBody);
+                cart = await ServiceClient.GetAsync<Cart>(client, "api/cart/" + sessionId);
             }
             //Then
             Assert.True(cart != null);
@@ -47,20 +47,16 @@ namespace Webstore.Test.Webservice
             //Given
             Cart cart = null;
             var sessionId = (new Guid()).ToString();
-            var product = new Product(1, "cup", 10.5);
             var expectedQuantity = 3;
-            var cartProduct = new CartProduct(product, expectedQuantity);
+            var cartProduct = new { Product = new { ProductId = 1, Name = "Integration Test" }, Quantity = 3 };
 
             //When
-            var content = new StringContent(JsonConvert.SerializeObject(cartProduct), Encoding.UTF8, "application/json");
             using (HttpClient client = _server.CreateClient())
             {
-                var response = await client.PostAsync("api/cart/" + sessionId, content);
-                response.EnsureSuccessStatusCode();
-                var responseBody = await response.Content.ReadAsStringAsync();
-                cart = JsonConvert.DeserializeObject<Cart>(responseBody);
+                cart = await ServiceClient.PostAsync<Cart>(client, "api/cart/" + sessionId, cartProduct);
+                cart = await ServiceClient.GetAsync<Cart>(client, "api/cart/" + sessionId);
             }
-            
+
             //Then
             Assert.True(cart != null, "Cart is null");
             Assert.True(cart.Products.Count() > 0, "No Products were added");
