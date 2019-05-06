@@ -1,0 +1,4 @@
+{
+    "appService.deploySubpath": "codebase/Webservices/Product/bin/Release/netcoreapp2.2/publish",
+    "appService.defaultWebAppToDeploy": ""
+}

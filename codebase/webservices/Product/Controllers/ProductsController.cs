@@ -37,9 +37,13 @@ namespace Webstore.Webservice.ProductApi
 
         // POST api/products
         [HttpPost]
-        public ActionResult<Webstore.Models.Product> Post([FromBody] Webstore.Models.Product product)
+        public ActionResult<Webstore.Models.Product> Post([FromBody] IEnumerable<Webstore.Models.Product> products)
         {
-            var result = this._dbProduct.Add(product.Name, product.Price);
+            var result = new List<Webstore.Models.Product>();
+            foreach (var product in products)
+            {
+                result.Add(this._dbProduct.Add(product.Name, product.Price));
+            }
             return Ok(result);
         }
 

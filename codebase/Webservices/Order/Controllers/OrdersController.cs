@@ -41,6 +41,7 @@ namespace Webstore.Webservice.OrderApi
         public ActionResult<Order> Post([FromBody] Order orderParam)
         {
             var order = new Order(orderParam.Customer, orderParam.Cart);
+            _orderCtx.Add(order);
             return Ok(order);
         }
 

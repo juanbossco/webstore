@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Webstore.Models;
 
-namespace DataContext
+namespace Webstore.DataContext
 {
     public class OrderContext : IOrderContext
     {
@@ -14,6 +14,13 @@ namespace DataContext
             _orders = new List<Order>();
         }
 
+        public Order Add(Order order)
+        {
+            var id = _orders.Count + 1;
+            order.OrderId = id;
+            _orders.Add(order);
+            return order;
+        }
         public Order Get(long orderId)
         {
             var order = _orders.SingleOrDefault(o => o.OrderId == orderId);

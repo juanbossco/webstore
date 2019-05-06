@@ -33,6 +33,8 @@ namespace Webgateway.Controllers
         [HttpPost("{sessionId}")]
         public async Task<ActionResult<Cart>> Post([FromBody] CartProduct product, string sessionId)
         {
+            if (product.Quantity < 1)
+                return BadRequest("Quantity cannot be less than 0");
             var cart = await _cartClient.Update(sessionId, product);
             return Ok(cart);
         }

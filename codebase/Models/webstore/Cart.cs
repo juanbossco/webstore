@@ -25,7 +25,6 @@ namespace Webstore.Models
             this.SessionId = sessionId;
         }
 
-
         protected int Id { get; }
         public string SessionId { get; protected set; }
 

@@ -43,29 +43,31 @@ namespace Webstore.Test.Webservice
         [Fact]
         public async Task CanAddProduct()
         {
-            var product = new { Name = "abcd", Price = 10.5 };
-            Webstore.Models.Product result = null;
+            var products = new[] { new { Name = "product vs", Price = 10.5 } };
+            IEnumerable<Webstore.Models.Product> result = null;
 
             using (HttpClient client = _server.CreateClient())
             {
-                result = await ServiceClient.PostAsync<Webstore.Models.Product>(client, "/api/products", product);
+                result = await ServiceClient.PostAsync<IEnumerable<Webstore.Models.Product>>(client, "/api/products", products);
             }
 
-            Assert.True(result != null);
-            Assert.True(result.ProductId == 1);
-            Assert.True(result.Name == "abcd");
-            Assert.True(result.Price == 10.5);
+            var product = result.FirstOrDefault();
+
+            Assert.True(product != null);
+            Assert.True(product.ProductId == 1);
+            Assert.True(product.Name == "product vs");
+            Assert.True(product.Price == 10.5);
         }
 
         [Fact]
         public async Task AddAndGetProduct()
         {
             //Given a new Product
-            var product = new Webstore.Models.Product(1, "cup", 10.5);
+            var body = new[] { new { Name = "cup", Price = 10.5 } };
             //When the Product is added
             using (HttpClient client = _server.CreateClient())
             {
-                product = await ServiceClient.PostAsync<Webstore.Models.Product>(client, "/api/products", product);
+                await ServiceClient.PostAsync<IEnumerable<Webstore.Models.Product>>(client, "/api/products", body);
             }
             //AND calling to get all products
             IEnumerable<Webstore.Models.Product> products = null;
@@ -81,7 +83,7 @@ namespace Webstore.Test.Webservice
             Assert.NotNull(newProduct);
             Assert.True(newProduct.ProductId == 1);
             Assert.True(newProduct.Name == "cup", "Product name doest not match");
-            Assert.True(newProduct.Price == 10.5);
+            Assert.True(newProduct.Price == 10.5, "Product Price does not match");
         }
     }
 }
