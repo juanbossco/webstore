@@ -6,7 +6,8 @@
 ### Gateway Architecture
 ### Microservice Architecture
 ### Event Driven Architecture
-### Relational Dabase (SQL) & Non-Relational Database (NoSQL)
+Decouple service
+Asynchronous processes
 
 ### Relational Dabase (SQL) & Non-Relational Database (NoSQL)
 SQL for transactional features
