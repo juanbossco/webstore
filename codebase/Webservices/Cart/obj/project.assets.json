@@ -12133,8 +12133,8 @@
     },
     "webstore/1.0.0": {
       "type": "project",
-      "path": "../../models/webstore/webstore.csproj",
-      "msbuildProject": "../../models/webstore/webstore.csproj"
+      "path": "../../Models/webstore/webstore.csproj",
+      "msbuildProject": "../../Models/webstore/webstore.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -12181,8 +12181,8 @@
             "/Users/juanlopez/Projects/webstore/codebase/Infrastructure/Infrastructure.csproj": {
               "projectPath": "/Users/juanlopez/Projects/webstore/codebase/Infrastructure/Infrastructure.csproj"
             },
-            "/Users/juanlopez/Projects/webstore/codebase/models/webstore/webstore.csproj": {
-              "projectPath": "/Users/juanlopez/Projects/webstore/codebase/models/webstore/webstore.csproj"
+            "/Users/juanlopez/Projects/webstore/codebase/Models/webstore/webstore.csproj": {
+              "projectPath": "/Users/juanlopez/Projects/webstore/codebase/Models/webstore/webstore.csproj"
             }
           }
         }

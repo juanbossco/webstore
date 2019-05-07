@@ -1,4 +1,4 @@
 {
-    "appService.deploySubpath": "codebase/Webservices/Order/bin/Release/netcoreapp2.2/publish",
-    "appService.defaultWebAppToDeploy": ""
+    "appService.deploySubpath": "codebase/Webservices/Cart/bin/Release/netcoreapp2.2/publish",
+    "appService.defaultWebAppToDeploy": "/subscriptions/87731eb3-4e2a-4b91-b757-84751187df97/resourceGroups/appsvc_rg_windows_centralus/providers/Microsoft.Web/sites/webstore-cartapi"
 }
