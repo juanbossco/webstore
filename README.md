@@ -17,7 +17,7 @@ ElastiSearch to index and search Orders
 ## Project folder structure
 
 * codebase
-⋅⋅* Consumers
+..* Consumers
 
 ## Core Services
 
