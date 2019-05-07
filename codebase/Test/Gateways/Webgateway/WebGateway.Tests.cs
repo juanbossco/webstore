@@ -17,11 +17,42 @@ namespace Webstore.Test.Gateways
 {
     public class WebGatewayTests
     {
-        private readonly TestServer _server;
+        private readonly TestServer _gatewayServer;
         public WebGatewayTests()
         {
-            _server = new TestServer(new WebHostBuilder()
+            _gatewayServer = new TestServer(new WebHostBuilder()
                 .UseStartup<Webstore.Webgateway.Startup>());
+        }
+
+        [Fact]
+        public async Task CanAddProducts()
+        {
+            IEnumerable<Webstore.Models.Product> products = null;
+            //Given
+            var body = new[]
+            {
+                new
+                {
+                    Name= "AFRICAN TEA",
+                    Price= "7.5",
+                    Properties= new []
+                    {
+                        new
+                        {
+                            Property= new {
+                                Name= "Count",
+                                Type= "int"
+                            },
+                            Value= 15
+                        }
+                    }
+                }
+            };
+            //When
+            products = await ServiceClient.PostAsync<IEnumerable<Webstore.Models.Product>>("https://webstore-productapi.azurewebsites.net/api/products/", body);
+
+            //Then
+            Assert.True(products != null);
         }
 
         [Fact]
@@ -30,7 +61,7 @@ namespace Webstore.Test.Gateways
             //Given
             IEnumerable<Webstore.Models.Product> products = null;
             //When
-            using (HttpClient client = _server.CreateClient())
+            using (HttpClient client = _gatewayServer.CreateClient())
             {
                 products = await ServiceClient.GetAsync<IEnumerable<Webstore.Models.Product>>(client, "api/webstore/products/");
             }
@@ -42,7 +73,7 @@ namespace Webstore.Test.Gateways
         public async Task CanGetProduct()
         {
             Webstore.Models.Product product = null;
-            using (HttpClient client = _server.CreateClient())
+            using (HttpClient client = _gatewayServer.CreateClient())
             {
                 product = await ServiceClient.GetAsync<Webstore.Models.Product>(client, "api/webstore/products/1");
             }
@@ -56,7 +87,7 @@ namespace Webstore.Test.Gateways
             var sessionId = Guid.NewGuid().ToString();
             Cart cart = null;
             //When
-            using (HttpClient client = _server.CreateClient())
+            using (HttpClient client = _gatewayServer.CreateClient())
             {
                 cart = await ServiceClient.GetAsync<Cart>(client, "api/webstore/cart/" + sessionId);
             }
@@ -74,7 +105,7 @@ namespace Webstore.Test.Gateways
             var cartProduct = new { ProductId = 1, Quantity = 3 };
 
             //When
-            using (HttpClient client = _server.CreateClient())
+            using (HttpClient client = _gatewayServer.CreateClient())
             {
                 cart = await ServiceClient.PostAsync<Cart>(client, "api/webstore/cart/" + sessionId, cartProduct);
                 cart = await ServiceClient.GetAsync<Cart>(client, "api/webstore/cart/" + sessionId);
@@ -95,7 +126,7 @@ namespace Webstore.Test.Gateways
             var customer = new { FirstName = "Juan", LastName = "Lopez", Email = "juanbossco@gmail.com" };
             Order order = null;
             //When
-            using (HttpClient client = _server.CreateClient())
+            using (HttpClient client = _gatewayServer.CreateClient())
             {
                 order = await ServiceClient.PostAsync<Order>(client, "api/checkout/" + sessionId, customer);
             }
