@@ -1,9 +1,7 @@
-# Intro
-
-Tech Stack
+# Tech Stack
 
 * ASP.NET Core 2.2
-* Azure services
+* Azure App Services
 
 For purposes of this POC in-memory storage was implemented. This POC does not implement databases.
 
@@ -22,6 +20,8 @@ Different architecture patterns were used to design this POC
 
 * The Backend for Frontend (BFF) architecture
 * Gatteway architecture
+* Microservices architecture
+* Event Driven architecture
 
 
 ### Backend For Frontend (BFF) Architecture
