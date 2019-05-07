@@ -3,3 +3,4 @@ obj/
 *.DS_Store
 *.cache
 .vscode/settings.json
+.DS_Store
