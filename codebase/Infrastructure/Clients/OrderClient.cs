@@ -16,7 +16,7 @@ namespace Webstore.Infrastructure.Clients
 
         public async Task<IEnumerable<Order>> Get(string email)
         {
-            var result = await ServiceClient.GetAsync<IEnumerable<Order>>(_orderClientUrl + email);
+            var result = await ServiceClient.GetAsync<IEnumerable<Order>>(_orderClientUrl + "?email=" + email);
             return result;
         }
 

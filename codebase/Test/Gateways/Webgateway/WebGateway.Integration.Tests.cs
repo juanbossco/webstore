@@ -118,13 +118,13 @@ namespace Webstore.Test.Gateways
             Assert.True(order != null);
         }
 
-        [Fact(Skip="Not Ready")]
+        [Fact]
         public async Task CanGetCustomerOrders()
         {
             //Given
             var customerEmail = "juanbossco@gmail.com";
             //When
-            var orders = await ServiceClient.GetAsync<IEnumerable<Order>>(gatewayUrl + "/api/webstore/orders/customer/" + customerEmail);
+            var orders = await ServiceClient.GetAsync<IEnumerable<Order>>(gatewayUrl + "/api/webstore/orders/?email=" + customerEmail);
             //Then
             Assert.True(orders != null);
             Assert.True(orders.Any());

@@ -54,7 +54,7 @@ namespace Webstore.Test.Webservice
             {
                 expectedOrder = await ServiceClient.PostAsync<Order>(client, "api/orders/", order);
                 expectedOrder = await ServiceClient.GetAsync<Order>(client, "api/orders/1");
-                customerOrders = await ServiceClient.GetAsync<IEnumerable<Order>>(client, "api/orders/customer/juanbossco@gmail.com");
+                customerOrders = await ServiceClient.GetAsync<IEnumerable<Order>>(client, "api/orders/?email=juanbossco@gmail.com");
             }
 
             Assert.True(expectedOrder != null, "Order is null");

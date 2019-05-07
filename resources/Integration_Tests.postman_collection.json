@@ -1,0 +1,193 @@
+{
+	"info": {
+		"_postman_id": "a19cef45-4824-4a08-8402-53f2eae6d282",
+		"name": "webstore integration test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create Product",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\n    {\n        \"Name\": \"AFRICAN TEA\",\n        \"Price\": \"7.5\",\n        \"Properties\": [\n            {\n                \"Property\": {\n                    \"Name\": \"Count\",\n                    \"Type\": \"int\"\n                },\n                \"Value\": 15\n            }\n        ]\n    },\n    {\n        \"Name\": \"TUSCANY TEA\",\n        \"Price\": \"17.5\",\n        \"Properties\": [\n            {\n                \"Property\": {\n                    \"Name\": \"Count\",\n                    \"Type\": \"int\"\n                },\n                \"Value\": 10\n            }\n        ]\n    }\n]"
+				},
+				"url": {
+					"raw": "https://webstore-productapi.azurewebsites.net/api/products",
+					"protocol": "https",
+					"host": [
+						"webstore-productapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gateway - Get Products",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://webstore-gatewayapi.azurewebsites.net/api/webstore/products",
+					"protocol": "https",
+					"host": [
+						"webstore-gatewayapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"webstore",
+						"products"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gateway - Update Cart",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"ProductId\": 1,\n    \"Quantity\": 6\n}"
+				},
+				"url": {
+					"raw": "https://webstore-gatewayapi.azurewebsites.net/api/webstore/cart/{{sessionId}}",
+					"protocol": "https",
+					"host": [
+						"webstore-gatewayapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"webstore",
+						"cart",
+						"{{sessionId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gateway - Get Cart",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://webstore-gatewayapi.azurewebsites.net/api/webstore/cart/{{sessionId}}",
+					"protocol": "https",
+					"host": [
+						"webstore-gatewayapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"webstore",
+						"cart",
+						"{{sessionId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gateway - Checkout Cart",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"FirstName\": \"Webstore\",\n\t\"LastName\": \"Shopping\",\n\t\"Email\": \"postman@webstore.com\"\n}"
+				},
+				"url": {
+					"raw": "https://webstore-gatewayapi.azurewebsites.net/api/checkout/{{sessionId}}",
+					"protocol": "https",
+					"host": [
+						"webstore-gatewayapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"checkout",
+						"{{sessionId}}"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gateway - Get Customer Orders",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "https://webstore-gatewayapi.azurewebsites.net/api/webstore/orders?email=postman@webstore.com",
+					"protocol": "https",
+					"host": [
+						"webstore-gatewayapi",
+						"azurewebsites",
+						"net"
+					],
+					"path": [
+						"api",
+						"webstore",
+						"orders"
+					],
+					"query": [
+						{
+							"key": "email",
+							"value": "postman@webstore.com"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

@@ -135,6 +135,7 @@ namespace Webstore.Test.Gateways
             Assert.True(order != null);
         }
 
+        [Fact(Skip="Not Ready")]
         public async Task CanGetCustomerOrders()
         {
             //Given
@@ -143,7 +144,7 @@ namespace Webstore.Test.Gateways
             //When
             using (HttpClient client = _gatewayServer.CreateClient())
             {
-                orders = await ServiceClient.GetAsync<IEnumerable<Order>>(client, "/api/webstore/orders/customer/" + customerEmail);
+                orders = await ServiceClient.GetAsync<IEnumerable<Order>>(client, "/api/webstore/orders/?email=" + customerEmail);
             }
             //Then
             Assert.True(orders != null);

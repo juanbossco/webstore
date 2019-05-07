@@ -24,8 +24,8 @@ namespace Webstore.Webgateway.Controllers
         }
 
         // GET api/orders
-        [HttpGet("customer/{email}")]
-        public async Task<ActionResult<IEnumerable<Order>>> Get(string email)
+        [HttpGet]
+        public async Task<ActionResult<IEnumerable<Order>>> Get([FromQuery] string email)
         {
             var orders = await _orderClient.Get(email);
             return Ok(orders);

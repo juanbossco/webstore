@@ -21,8 +21,8 @@ namespace Webstore.Webservice.OrderApi
         }
 
         // GET api/orders
-        [HttpGet("customer/{email}")]
-        public ActionResult<IEnumerable<Order>> Get(string email)
+        [HttpGet]
+        public ActionResult<IEnumerable<Order>> Get([FromQuery] string email)
         {
             var orders = _orderCtx.GetAll(email);
             return Ok(orders);
