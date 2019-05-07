@@ -20,7 +20,11 @@ ElastiSearch to index and search Orders
   <li>Codebase</li>
   <li>
     <ul>
-      <li>Consumers</li>
+      <li>Event Consumers</li>
+      <li><ul>
+        <li>Orchestrator</li>
+        <li>Data Aggregator</li>
+      </ul><li>
       <li>DataContext</li>
       <li>Events</li>
       <li>Gateways</li>
