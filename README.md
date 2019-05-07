@@ -16,7 +16,7 @@ ElastiSearch to index and search Orders
 
 ## Project folder structure
 
-<ul>
+<ul type="none">
   <li>
     Codebase
   </li>
