@@ -107,7 +107,7 @@ Index data to support search functionality.
 
 Download the postman collection and run
 
-[Postman Collection - Integration Test](codebase/resources/Integration_Tests.postman_collection.json)
+[Postman Collection - Integration Test](resources/Integration_Tests.postman_collection.json)
 
 ## Core Services
 
