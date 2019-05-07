@@ -30,7 +30,7 @@ Services that can evolve and be deployed indenpendently
 
 ---
 
-Decouple services and execute asynchronous processes.
+Decouple services, execute asynchronous processes and implement workflow automation
 
 Use case: trigger OrderPlaced event when Customer places and Order, then the Orchestrator will call the Cart service to delete the Cart associated with the Order.
 
