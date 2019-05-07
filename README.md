@@ -3,24 +3,31 @@
 
 ## Architecture Overview
 ---
+
 ### Backend For Frontend (BFF) Architecture
 ---
+
 ### Gateway Architecture
 ---
+
 ### Microservice Architecture
 ---
+
 ### Event Driven Architecture
 ---
+
 Decouple service
 Asynchronous processes
 
 ### Relational Dabase (SQL) & Non-Relational Database (NoSQL)
 ---
+
 SQL for transactional features, i.e. Creating Products
 No-SQL to store Order and Cart data
 
 ### ElastiSearch 
 ---
+
 Index Orders using ElasticSerach to support certain functionalities that require querying Orders history, i.e. Search orders
 
 ## Project folder structure
@@ -55,6 +62,7 @@ Index Orders using ElasticSerach to support certain functionalities that require
 ---
 
 ### Product API
+
 * Endpoint: [webstore-productapi]( https://webstore-productapi.azurewebsites.net/api/products/ "Product API")
 
 ### Order API
