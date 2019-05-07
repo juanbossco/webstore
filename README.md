@@ -48,6 +48,7 @@ Loosely coupled services that can evolve and be deployed indenpendently.
 
 Decouple services, execute asynchronous processes and implement workflow automation after an event occurs.
 
+[See Checkout Sequence Diagram](/Gateways)
 
 ### Relational Dabase (SQL) & Non-Relational Database (NoSQL)
 
