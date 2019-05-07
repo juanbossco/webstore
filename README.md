@@ -31,6 +31,11 @@ ElastiSearch to index and search Orders
       <li>Infrastructure</li>
       <li>Models</li>
       <li>Webservices</li>
+      <ul type="none">
+        <li>Cart</li>
+        <li>Order</li>
+        <li>Product</li>
+      </ul>
       <li>Test</li>
     </ul>
   </li>
