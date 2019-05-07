@@ -17,12 +17,17 @@ ElastiSearch to index and search Orders
 ## Project folder structure
 
 <ul type="none">
-  <li>
-    Codebase
-  </li>
+  <li>Codebase</li>
   <li>
     <ul>
-      <li>another</li>
+      <li>Consumers</li>
+      <li>DataContext</li>
+      <li>Events</li>
+      <li>Gateways</li>
+      <li>Infrastructure</li>
+      <li>Models</li>
+      <li>Webservices</li>
+      <li>Test</li>
     </ul>
   </li>
 </ul>
