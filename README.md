@@ -11,21 +11,26 @@
 ### Backend For Frontend (BFF) Architecture
 
 ---
+Authenticates Customers
 
 ### Gateway Architecture
 
 ---
 
+The Gateway services performs as the business layer
+
 ### Microservice Architecture
 
 ---
+Services that can evolve and be deployed indenpendently
 
 ### Event Driven Architecture
 
 ---
 
-Decouple service
-Asynchronous processes
+Decouple services and execute asynchronous processes.
+
+Use case: trigger OrderPlaced event when Customer places and Order, then the Orchestrator will call the Cart service to delete the Cart associated with the Order.
 
 ### Relational Dabase (SQL) & Non-Relational Database (NoSQL)
 
