@@ -67,5 +67,11 @@ namespace Webstore.Infrastructure
 
             return result;
         }
+
+        public static async Task DeleteAsync(HttpClient client, string url)
+        {
+            var response = await client.DeleteAsync(url);
+            response.EnsureSuccessStatusCode();
+        }
     }
 }

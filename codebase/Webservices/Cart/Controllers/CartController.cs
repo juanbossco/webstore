@@ -42,9 +42,10 @@ namespace Webstore.Webservice.CartApi
 
         // DELETE api/cart/5
         [HttpDelete("{sessionId}")]
-        public void Delete(string sessionId)
+        public ActionResult<string> Delete(string sessionId)
         {
             _cartCtxt.Delete(sessionId);
+            return Ok(sessionId);
         }
     }
 }

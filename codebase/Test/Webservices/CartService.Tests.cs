@@ -63,5 +63,19 @@ namespace Webstore.Test.Webservice
             var expectedProduct = cart.Products.First();
             Assert.True(expectedProduct.Quantity == expectedQuantity, "Product Quantity was not updated");
         }
+
+        [Fact]
+        public async Task CanDelete()
+        {
+            //Given
+            var sessionId = Guid.NewGuid().ToString();
+            //When
+            using (HttpClient client = _server.CreateClient())
+            {
+                await ServiceClient.DeleteAsync(client, "api/cart/" + sessionId);
+            }
+            //Then
+            Assert.True(1 == 1);
+        }
     }
 }
