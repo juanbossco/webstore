@@ -18,10 +18,14 @@ namespace Webstore.Test.Gateways
     public class WebGatewayTests
     {
         private readonly TestServer _gatewayServer;
+        private readonly string sessionId;
+
         public WebGatewayTests()
         {
             _gatewayServer = new TestServer(new WebHostBuilder()
                 .UseStartup<Webstore.Webgateway.Startup>());
+
+            sessionId = "A1B2C3";
         }
 
         [Fact]
@@ -84,7 +88,6 @@ namespace Webstore.Test.Gateways
         public async Task CanGetCart()
         {
             //Given
-            var sessionId = Guid.NewGuid().ToString();
             Cart cart = null;
             //When
             using (HttpClient client = _gatewayServer.CreateClient())
@@ -100,7 +103,6 @@ namespace Webstore.Test.Gateways
         {
             //Given
             Cart cart = null;
-            var sessionId = (new Guid()).ToString();
             var expectedQuantity = 3;
             var cartProduct = new { ProductId = 1, Quantity = 3 };
 
@@ -122,7 +124,6 @@ namespace Webstore.Test.Gateways
         public async Task CanCheckout()
         {
             //Given
-            var sessionId = (new Guid()).ToString();
             var customer = new { FirstName = "Juan", LastName = "Lopez", Email = "juanbossco@gmail.com" };
             Order order = null;
             //When

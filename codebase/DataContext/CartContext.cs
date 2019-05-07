@@ -27,7 +27,7 @@ namespace Webstore.DataContext
         public void Delete(string sessionId)
         {
             var cart = _carts.SingleOrDefault(c => c.SessionId == sessionId);
-            if (cart == null)
+            if (cart != null)
             {
                 _carts.Remove(cart);
             }
