@@ -1,6 +1,4 @@
-# Intro
-
-Tech Stack
+# Tech Stack
 
 * ASP.NET Core 2.2
 * Azure services
