@@ -103,6 +103,12 @@ Index data to support search functionality.
   </li>
 </ul>
 
+## Run Integration Tests
+
+Checkout the project and run the postman collection located here:
+
+[Postman Collection - Integration Test](resources/Integration_Tests.postman_collection.json)
+
 ## Core Services
 
 ---
