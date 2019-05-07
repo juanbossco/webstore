@@ -1,31 +1,41 @@
 # Architecture
+
+---
+
 ![BFF/Microservice Architecture](resources/Webstore%20Architecture.png?raw=true "BFF/Microservice Architecture")
 
 ## Architecture Overview
-***
+
+---
 
 ### Backend For Frontend (BFF) Architecture
+
 ---
 
 ### Gateway Architecture
+
 ---
 
 ### Microservice Architecture
+
 ---
 
 ### Event Driven Architecture
+
 ---
 
 Decouple service
 Asynchronous processes
 
 ### Relational Dabase (SQL) & Non-Relational Database (NoSQL)
+
 ---
 
 SQL for transactional features, i.e. Creating Products
 No-SQL to store Order and Cart data
 
 ### ElastiSearch 
+
 ---
 
 Index Orders using ElasticSerach to support certain functionalities that require querying Orders history, i.e. Search orders
