@@ -2,9 +2,12 @@
 
 ---
 
-The technologies used in this POC are the ones I have experience with. I used ASP.NET Core 2.2 and Azure to host services.
+Tech Stack
 
-This POC does not implement databases, in-memory storage was implemented.
+* ASP.NET Core 2.2
+* Azure services
+
+For purposes of this POC in-memory storage was implemented. This POC does not implement databases.
 
 
 # Architecture
@@ -19,6 +22,12 @@ Architecture Diagram
 
 ---
 
+Different architecture patterns were used to design this POC
+
+* The Backend for Frontend (BFF) architecture
+* Gatteway architecture
+
+
 ### Backend For Frontend (BFF) Architecture
 
 ---
@@ -28,20 +37,21 @@ Authenticates Customers
 
 ---
 
-The Gateway services performs as the business layer
+The Gateway API performs as the business layer and proxy for all clients; it's the single point of entry for all clients to interact with internal microservices.
+
+This architecture pattern abstracts away all backend (internal services) and dependencies behind facades.
 
 ### Microservice Architecture
 
 ---
-Services that can evolve and be deployed indenpendently
+Loosely coupled services that can evolve and be deployed indenpendently.
 
 ### Event Driven Architecture
 
 ---
 
-Decouple services, execute asynchronous processes and implement workflow automation
+Decouple services, execute asynchronous processes and implement workflow automation after an event occurs.
 
-Use case: trigger OrderPlaced event when Customer places and Order, then the Orchestrator will call the Cart service to delete the Cart associated with the Order.
 
 ### Relational Dabase (SQL) & Non-Relational Database (NoSQL)
 
@@ -49,20 +59,24 @@ Use case: trigger OrderPlaced event when Customer places and Order, then the Orc
 
 * NOTE: No database was implemented in this POC. An in-mem storage system was implemented.
 
-SQL for transactional features, i.e. Creating Products
-No-SQL to store Order and Cart data
+SQL database (relational database) for transaction oriented applications, frequent and short transactions.
+No-SQL for storage and fast retrieval of data, i.e. Order history.
+
 
 ### Caching
 
 ---
 
-Products and Cart services can impplement caching, not implemented in this POC, but some caching strategies can be implemented, i.e. in-mem caching or redis
+Product and Cart services can impplement caching to cache the Customer's cart and product information until an Order is placed for that Cart.
 
 ### ElastiSearch 
 
 ---
 
-Index Orders using ElasticSerach to support certain functionalities that require querying Orders history, i.e. Search orders
+* Optional
+
+Index data to support search functionality.
+
 
 ## Project folder structure
 ---
