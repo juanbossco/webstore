@@ -1,3 +1,12 @@
+# Intro
+
+---
+
+The technologies used in this POC are the ones I have experience with. I used ASP.NET Core 2.2 and Azure to host services.
+
+This POC does not implement databases, in-memory storage was implemented.
+
+
 # Architecture
 
 ---
@@ -38,8 +47,16 @@ Use case: trigger OrderPlaced event when Customer places and Order, then the Orc
 
 ---
 
+* NOTE: No database was implemented in this POC. An in-mem storage system was implemented.
+
 SQL for transactional features, i.e. Creating Products
 No-SQL to store Order and Cart data
+
+### Caching
+
+---
+
+Products and Cart services can impplement caching, not implemented in this POC, but some caching strategies can be implemented, i.e. in-mem caching or redis
 
 ### ElastiSearch 
 
