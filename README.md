@@ -59,10 +59,10 @@ Index Orders using ElasticSerach to support certain functionalities that require
 </ul>
 
 ## Core Services
+
 ---
 
 ### Product API
-
 * Endpoint: [webstore-productapi]( https://webstore-productapi.azurewebsites.net/api/products/ "Product API")
 
 ### Order API
