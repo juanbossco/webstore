@@ -21,10 +21,10 @@ ElastiSearch to index and search Orders
   <li>
     <ul>
       <li>Event Consumers</li>
-      <li><ul>
+      <ul type="none">
         <li>Orchestrator</li>
         <li>Data Aggregator</li>
-      </ul><li>
+      </ul>
       <li>DataContext</li>
       <li>Events</li>
       <li>Gateways</li>
