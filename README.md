@@ -1,7 +1,5 @@
 # Intro
 
----
-
 Tech Stack
 
 * ASP.NET Core 2.2
@@ -11,8 +9,6 @@ For purposes of this POC in-memory storage was implemented. This POC does not im
 
 
 # Architecture
-
----
 
 Architecture Diagram
 
