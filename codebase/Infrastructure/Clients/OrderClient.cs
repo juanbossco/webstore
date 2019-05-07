@@ -20,6 +20,12 @@ namespace Webstore.Infrastructure.Clients
             return result;
         }
 
+        public async Task<Order> Get(int orderId)
+        {
+            var result = await ServiceClient.GetAsync<Order>(_orderClientUrl + orderId.ToString());
+            return result;
+        }
+
         public async Task<Order> Post(Order order)
         {
             var result = await ServiceClient.PostAsync<Order>(_orderClientUrl, order);

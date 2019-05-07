@@ -8,5 +8,6 @@ namespace Webstore.Infrastructure.Clients.Contracts
     {
          Task<Order> Post(Order order);
          Task<IEnumerable<Order>> Get(string email);
+         Task<Order> Get(int orderId);
     }
 }

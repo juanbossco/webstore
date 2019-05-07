@@ -15,17 +15,15 @@ using Webstore.Infrastructure;
 
 namespace Webstore.Test.Gateways
 {
-    public class WebGatewayTests
+    public class WebGatewayIntegrationTests
     {
-        private readonly TestServer _gatewayServer;
-        private readonly string sessionId;
+        private readonly string gatewayUrl = string.Empty;
+        private readonly string sessionId = string.Empty;
 
-        public WebGatewayTests()
+        public WebGatewayIntegrationTests()
         {
-            _gatewayServer = new TestServer(new WebHostBuilder()
-                .UseStartup<Webstore.Webgateway.Startup>());
-
-            sessionId = "A1B2C3";
+            gatewayUrl = "https://webstore-gatewayapi.azurewebsites.net/";
+            sessionId = "A1B2C3IT";
         }
 
         [Fact]
@@ -65,10 +63,7 @@ namespace Webstore.Test.Gateways
             //Given
             IEnumerable<Webstore.Models.Product> products = null;
             //When
-            using (HttpClient client = _gatewayServer.CreateClient())
-            {
-                products = await ServiceClient.GetAsync<IEnumerable<Webstore.Models.Product>>(client, "api/webstore/products/");
-            }
+            products = await ServiceClient.GetAsync<IEnumerable<Webstore.Models.Product>>(gatewayUrl + "api/webstore/products/");
             //Then
             Assert.True(products != null);
         }
@@ -77,10 +72,7 @@ namespace Webstore.Test.Gateways
         public async Task CanGetProduct()
         {
             Webstore.Models.Product product = null;
-            using (HttpClient client = _gatewayServer.CreateClient())
-            {
-                product = await ServiceClient.GetAsync<Webstore.Models.Product>(client, "api/webstore/products/1");
-            }
+            product = await ServiceClient.GetAsync<Webstore.Models.Product>(gatewayUrl + "api/webstore/products/1");
             Assert.True(product != null);
         }
 
@@ -90,10 +82,7 @@ namespace Webstore.Test.Gateways
             //Given
             Cart cart = null;
             //When
-            using (HttpClient client = _gatewayServer.CreateClient())
-            {
-                cart = await ServiceClient.GetAsync<Cart>(client, "api/webstore/cart/" + sessionId);
-            }
+            cart = await ServiceClient.GetAsync<Cart>(gatewayUrl + "api/webstore/cart/" + sessionId);
             //Then
             Assert.True(cart != null);
         }
@@ -107,11 +96,8 @@ namespace Webstore.Test.Gateways
             var cartProduct = new { ProductId = 1, Quantity = 3 };
 
             //When
-            using (HttpClient client = _gatewayServer.CreateClient())
-            {
-                cart = await ServiceClient.PostAsync<Cart>(client, "api/webstore/cart/" + sessionId, cartProduct);
-                cart = await ServiceClient.GetAsync<Cart>(client, "api/webstore/cart/" + sessionId);
-            }
+            cart = await ServiceClient.PostAsync<Cart>(gatewayUrl + "api/webstore/cart/" + sessionId, cartProduct);
+            cart = await ServiceClient.GetAsync<Cart>(gatewayUrl + "api/webstore/cart/" + sessionId);
 
             //Then
             Assert.True(cart != null, "Cart is null");
@@ -127,24 +113,18 @@ namespace Webstore.Test.Gateways
             var customer = new { FirstName = "Juan", LastName = "Lopez", Email = "juanbossco@gmail.com" };
             Order order = null;
             //When
-            using (HttpClient client = _gatewayServer.CreateClient())
-            {
-                order = await ServiceClient.PostAsync<Order>(client, "api/checkout/" + sessionId, customer);
-            }
+            order = await ServiceClient.PostAsync<Order>(gatewayUrl + "api/checkout/" + sessionId, customer);
             //Then
             Assert.True(order != null);
         }
 
+        [Fact(Skip="Not Ready")]
         public async Task CanGetCustomerOrders()
         {
             //Given
             var customerEmail = "juanbossco@gmail.com";
-            IEnumerable<Order> orders = null;
             //When
-            using (HttpClient client = _gatewayServer.CreateClient())
-            {
-                orders = await ServiceClient.GetAsync<IEnumerable<Order>>(client, "/api/webstore/orders/customer/" + customerEmail);
-            }
+            var orders = await ServiceClient.GetAsync<IEnumerable<Order>>(gatewayUrl + "/api/webstore/orders/customer/" + customerEmail);
             //Then
             Assert.True(orders != null);
             Assert.True(orders.Any());
