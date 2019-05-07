@@ -27,7 +27,8 @@ Different architecture patterns were used to design this POC
 ### Backend For Frontend (BFF) Architecture
 
 ---
-Authenticates Customers
+* Authenticates Users
+* Server rendering
 
 ### Gateway Architecture
 
