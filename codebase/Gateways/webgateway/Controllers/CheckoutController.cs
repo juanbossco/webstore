@@ -32,7 +32,7 @@ namespace Webstore.Webgateway.Controllers
             var cart = await _cartClient.Get(sessionId);
             var order = new Order(customer, cart);
             order = await _orderClient.Post(order);
-            //TODO replace below point-to-point integration with publushing OrderPlaced event
+            //TODO replace below point-to-point integration with OrderPlaced event
             await _cartClient.Delete(sessionId);
             return Ok(order);
         }

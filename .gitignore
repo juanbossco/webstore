@@ -4,3 +4,10 @@ obj/
 *.cache
 .vscode/settings.json
 .DS_Store
+.DS_Store
+codebase/Webservices/.DS_Store
+codebase/webservices/.DS_Store
+codebase/Webservices/Product/infrastructure/.terraform.tfstate.lock.info
+codebase/Webservices/Product/infrastructure/plan.bin
+codebase/Webservices/Product/infrastructure/.terraform/plugins/darwin_amd64/terraform-provider-azurerm_v1.38.0_x4
+codebase/Webservices/Product/infrastructure/.terraform/plugins/darwin_amd64/lock.json
