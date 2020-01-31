@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "webgateway", "Gateways\webg
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Models", "Models", "{FAACC8D1-BCA5-49A1-9FC8-C2B21D56436D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "webstore", "Models\webstore\webstore.csproj", "{CECECE38-1CF2-4783-8BCD-AB37F0F7E13B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "webstore", "Models\webstore\Models.csproj", "{CECECE38-1CF2-4783-8BCD-AB37F0F7E13B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{E3AC115C-7334-46E6-815E-23DF47C146EB}"
 EndProject
@@ -31,7 +31,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Cart", "Webservices\Cart\Ca
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Order", "Webservices\Order\Order.csproj", "{7E559367-C4CD-4B60-90B9-6C5D9D790757}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Infrastructure", "Infrastructure\Infrastructure.csproj", "{8AA5F09D-925B-4499-8155-41C31E783103}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Middleware", "Middleware\Middleware.csproj", "{8AA5F09D-925B-4499-8155-41C31E783103}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Events", "Events\Events.csproj", "{D83DA453-99B3-46AB-A65E-A8E4F6976B73}"
 EndProject

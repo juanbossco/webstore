@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\models\webstore\webstore.csproj" />
+    <ProjectReference Include="..\..\models\webstore\Models.csproj" />
     <ProjectReference Include="..\..\DataContext\DataContext.csproj" />
   </ItemGroup>
 

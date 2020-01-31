@@ -13,8 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\models\webstore\webstore.csproj" />
-    <ProjectReference Include="..\..\Infrastructure\Infrastructure.csproj" />
+    <ProjectReference Include="..\..\models\webstore\Models.csproj" />
+    <ProjectReference Include="..\..\Middleware\Middleware.csproj" />
   </ItemGroup>
 
 </Project>

@@ -19,9 +19,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\..\Infrastructure\Infrastructure.csproj" />
+    <ProjectReference Include="..\..\..\Middleware\Middleware.csproj" />
     <ProjectReference Include="..\..\..\Gateways\webgateway\webgateway.csproj" />
-    <ProjectReference Include="..\..\..\Models\webstore\webstore.csproj" />
+    <ProjectReference Include="..\..\..\Models\webstore\Models.csproj" />
     <ProjectReference Include="..\..\..\Webservices\Product\Product.csproj" />
   </ItemGroup>
 
