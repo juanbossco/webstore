@@ -1,0 +1,1 @@
+to deploy Product API from VS Code using Azure plugin update the settings.json file at the root folder webstore
