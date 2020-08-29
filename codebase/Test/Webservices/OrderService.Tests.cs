@@ -39,7 +39,7 @@ namespace Webstore.Test.Webservice
 
             var sessionId = new Guid().ToString();
             var cart = _cartContext.Get(sessionId);
-            var cartProduct = new CartProduct(product, expectedQuantity);
+            var cartProduct = new CartItem(product, expectedQuantity);
             cart.Update(cartProduct);
 
             var customer = new Customer("Juan", "Lope", "juanbossco@gmail.com");

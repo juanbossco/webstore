@@ -28,7 +28,7 @@ namespace Models
             var sessionId = new Guid().ToString();
             //When
             var cart = _cartContext.Get(sessionId);
-            var cartProduct = new CartProduct(product, expectedQuantity);
+            var cartProduct = new CartItem(product, expectedQuantity);
             cart.Update(cartProduct);
             //Then
             var newProduct = cart.Products.SingleOrDefault(p => p.Product.ProductId == product.ProductId);

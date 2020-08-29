@@ -33,7 +33,7 @@ namespace Webstore.Webservice.CartApi
         // POST api/cart
         // For testing purposes the session Id is passed in the query string
         [HttpPost("{sessionId}")]
-        public ActionResult<Cart> Post([FromBody] CartProduct cartProduct, string sessionId)
+        public ActionResult<Cart> Post([FromBody] CartItem cartProduct, string sessionId)
         {
             var cart = _cartCtxt.Get(sessionId);
             cart.Update(cartProduct);

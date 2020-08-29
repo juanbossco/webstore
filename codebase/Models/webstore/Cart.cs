@@ -4,9 +4,9 @@ using System;
 
 namespace Webstore.Models
 {
-    public class CartProduct
+    public class CartItem
     {
-        public CartProduct(Product product, int quantity)
+        public CartItem(Product product, int quantity)
         {
             this.Product = product;
             this.Quantity = quantity;
@@ -17,20 +17,20 @@ namespace Webstore.Models
 
     public class Cart
     {
-        private IList<CartProduct> _products;
+        private IList<CartItem> _products;
 
         public Cart(string sessionId)
         {
-            _products = new List<CartProduct>();
+            _products = new List<CartItem>();
             this.SessionId = sessionId;
         }
 
         protected int Id { get; }
         public string SessionId { get; protected set; }
 
-        public IEnumerable<CartProduct> Products => _products;
+        public IEnumerable<CartItem> Products => _products;
 
-        public IEnumerable<CartProduct> Update(CartProduct product)
+        public IEnumerable<CartItem> Update(CartItem product)
         {
             var cartProduct = _products.SingleOrDefault(p => p.Product.ProductId == product.Product.ProductId);
 

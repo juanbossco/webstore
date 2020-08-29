@@ -18,7 +18,7 @@ namespace Webstore.Infrastructure.Clients
             return result;
         }
 
-        public async Task<Cart> Update(string sessionId, CartProduct cartProduct)
+        public async Task<Cart> Update(string sessionId, CartItem cartProduct)
         {
             var result = await ServiceClient.PostAsync<Cart>(_cartClientUrl + sessionId, cartProduct);
             return result;

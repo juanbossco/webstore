@@ -36,7 +36,7 @@ namespace Webstore.Webgateway.Controllers
         }
 
         [HttpPost("{sessionId}")]
-        public async Task<ActionResult<Cart>> Post([FromBody] CartProductDto cartProductDto, string sessionId)
+        public async Task<ActionResult<Cart>> Post([FromBody] CartItemDto cartProductDto, string sessionId)
         {
             var product = await _productClient.Get(cartProductDto.ProductId);
 
@@ -46,7 +46,7 @@ namespace Webstore.Webgateway.Controllers
             if (cartProductDto.Quantity < 1)
                 return BadRequest("Quantity cannot be less than 0");
 
-            var cartProduct = new CartProduct(product, cartProductDto.Quantity);
+            var cartProduct = new CartItem(product, cartProductDto.Quantity);
             var cart = await _cartClient.Update(sessionId, cartProduct);
 
             return Ok(cart);
